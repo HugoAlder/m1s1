@@ -30,6 +30,7 @@ int main (int argc, char ** argv) {
     return 1;
   }
 
+  printf("Loading MBR\n");
   load_mbr();
 
   mbr.vol[mbr.nvol].fst_cyl = atoi(argv[1]);
@@ -38,7 +39,10 @@ int main (int argc, char ** argv) {
   mbr.vol[mbr.nvol].type = ANNEXE;
   mbr.nvol++;
 
+  printf("Saving MBR\n");
   save_mbr();
+
+  printf("Volume %d added successfully\n", mbr.nvol);
 
   return 0;
 }
