@@ -1,0 +1,157 @@
+0xffe0be08 : local_base
+0x804a024 : global_base
+0x80484ff : main
+0x80484d0 : rec
+0x804846b : dump_stack
+local_stack = 0xffe0be08 - *local_stack = 0xdeadbeef  # valeur de local_base (main)
+local_stack = 0xffe0be04 - *local_stack = 0xffe0bec4
+local_stack = 0xffe0be00 - *local_stack = 0x1
+local_stack = 0xffe0bdfc - *local_stack = 0x804860b
+local_stack = 0xffe0bdf8 - *local_stack = 0xf75df830
+local_stack = 0xffe0bdf4 - *local_stack = 0x804846b   # adresse de la function dump_stack
+local_stack = 0xffe0bdf0 - *local_stack = (nil)
+local_stack = 0xffe0bdec - *local_stack = 0x804859e
+local_stack = 0xffe0bde8 - *local_stack = 0xffe0be18
+local_stack = 0xffe0bde4 - *local_stack = 0xf77ba918
+local_stack = 0xffe0bde0 - *local_stack = 0xffe0be08
+local_stack = 0xffe0bddc - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bdd8 - *local_stack = 0xffe0bdf8
+local_stack = 0xffe0bdd4 - *local_stack = 0x804869e
+local_stack = 0xffe0bdd0 - *local_stack = 0xf7761d60
+local_stack = 0xffe0bdcc - *local_stack = 0xf75fa046
+local_stack = 0xffe0bdc8 - *local_stack = 0xffe0be18
+local_stack = 0xffe0bdc4 - *local_stack = 0xf7761000
+local_stack = 0xffe0bdc0 - *local_stack = 0x1         # valeur de depth
+local_stack = 0xffe0bdbc - *local_stack = 0x80484f9
+local_stack = 0xffe0bdb8 - *local_stack = 0xffe0bde8
+local_stack = 0xffe0bdb4 - *local_stack = 0xf75b7798
+local_stack = 0xffe0bdb0 - *local_stack = 0xf77ba000
+local_stack = 0xffe0bdac - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bda8 - *local_stack = 0x34303866
+local_stack = 0xffe0bda4 - *local_stack = 0x804822c
+local_stack = 0xffe0bda0 - *local_stack = 0xf77ba000
+local_stack = 0xffe0bd9c - *local_stack = 0xf76408fb
+local_stack = 0xffe0bd98 - *local_stack = 0xc2
+local_stack = 0xffe0bd94 - *local_stack = 0x1
+local_stack = 0xffe0bd90 - *local_stack = 0x2         # valeur de depth
+local_stack = 0xffe0bd8c - *local_stack = 0x80484f9
+local_stack = 0xffe0bd88 - *local_stack = 0xffe0bdb8
+local_stack = 0xffe0bd84 - *local_stack = 0x1
+local_stack = 0xffe0bd80 - *local_stack = 0x1
+local_stack = 0xffe0bd7c - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bd78 - *local_stack = 0xf77baad0
+local_stack = 0xffe0bd74 - *local_stack = 0xf77a48c2
+local_stack = 0xffe0bd70 - *local_stack = 0x804a00c
+local_stack = 0xffe0bd6c - *local_stack = 0xf77ba918
+local_stack = 0xffe0bd68 - *local_stack = 0x1
+local_stack = 0xffe0bd64 - *local_stack = 0x80481dc
+local_stack = 0xffe0bd60 - *local_stack = 0x3         # valeur de depth
+local_stack = 0xffe0bd5c - *local_stack = 0x80484f9
+local_stack = 0xffe0bd58 - *local_stack = 0xffe0bd88
+local_stack = 0xffe0bd54 - *local_stack = (nil)
+local_stack = 0xffe0bd50 - *local_stack = 0xf779efe9
+local_stack = 0xffe0bd4c - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bd48 - *local_stack = (nil)
+local_stack = 0xffe0bd44 - *local_stack = (nil)
+local_stack = 0xffe0bd40 - *local_stack = (nil)
+local_stack = 0xffe0bd3c - *local_stack = 0xf77bac08
+local_stack = 0xffe0bd38 - *local_stack = 0xf77ba000
+local_stack = 0xffe0bd34 - *local_stack = (nil)
+local_stack = 0xffe0bd30 - *local_stack = 0x4         # valeur de depth
+local_stack = 0xffe0bd2c - *local_stack = 0x80484f9
+local_stack = 0xffe0bd28 - *local_stack = 0xffe0bd58
+local_stack = 0xffe0bd24 - *local_stack = 0xffe0bdd0
+local_stack = 0xffe0bd20 - *local_stack = 0xffffffff
+local_stack = 0xffe0bd1c - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bd18 - *local_stack = 0xf75bddc8
+local_stack = 0xffe0bd14 - *local_stack = 0xffe0bdb4
+local_stack = 0xffe0bd10 - *local_stack = (nil)
+local_stack = 0xffe0bd0c - *local_stack = 0x8048257
+local_stack = 0xffe0bd08 - *local_stack = 0xffe0bd20
+local_stack = 0xffe0bd04 - *local_stack = 0xf77ba918
+local_stack = 0xffe0bd00 - *local_stack = 0x5         # valeur de depth
+local_stack = 0xffe0bcfc - *local_stack = 0x80484f9
+local_stack = 0xffe0bcf8 - *local_stack = 0xffe0bd28
+local_stack = 0xffe0bcf4 - *local_stack = 0xffe0bd40
+local_stack = 0xffe0bcf0 - *local_stack = 0xffe0bd44
+local_stack = 0xffe0bcec - *local_stack = 0xcafebabe
+local_stack = 0xffe0bce8 - *local_stack = 0xf75be618
+local_stack = 0xffe0bce4 - *local_stack = 0x8ea
+local_stack = 0xffe0bce0 - *local_stack = 0xf75bddc8
+local_stack = 0xffe0bcdc - *local_stack = 0x1
+local_stack = 0xffe0bcd8 - *local_stack = 0xf77ba918
+local_stack = 0xffe0bcd4 - *local_stack = 0x1
+local_stack = 0xffe0bcd0 - *local_stack = 0x6         # valeur de depth
+local_stack = 0xffe0bccc - *local_stack = 0x80484f9
+local_stack = 0xffe0bcc8 - *local_stack = 0xffe0bcf8
+local_stack = 0xffe0bcc4 - *local_stack = 0x1
+local_stack = 0xffe0bcc0 - *local_stack = 0xf77baa74
+local_stack = 0xffe0bcbc - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bcb8 - *local_stack = 0x80481dc
+local_stack = 0xffe0bcb4 - *local_stack = 0xf779fb6b
+local_stack = 0xffe0bcb0 - *local_stack = 0xffe0bd70
+local_stack = 0xffe0bcac - *local_stack = 0xffe0bd28
+local_stack = 0xffe0bca8 - *local_stack = 0xf77baad0
+local_stack = 0xffe0bca4 - *local_stack = (nil)
+local_stack = 0xffe0bca0 - *local_stack = 0x7         # valeur de depth
+local_stack = 0xffe0bc9c - *local_stack = 0x80484f9
+local_stack = 0xffe0bc98 - *local_stack = 0xffe0bcc8
+local_stack = 0xffe0bc94 - *local_stack = (nil)
+local_stack = 0xffe0bc90 - *local_stack = (nil)
+local_stack = 0xffe0bc8c - *local_stack = 0xcafebabe # valeur de rec_local
+local_stack = 0xffe0bc88 - *local_stack = 0xf77ba000
+local_stack = 0xffe0bc84 - *local_stack = (nil)
+local_stack = 0xffe0bc80 - *local_stack = 0x1
+local_stack = 0xffe0bc7c - *local_stack = 0xf77652b8
+local_stack = 0xffe0bc78 - *local_stack = 0xf77b0993
+local_stack = 0xffe0bc74 - *local_stack = 0xffe0bd20
+local_stack = 0xffe0bc70 - *local_stack = 0x8         # valeur de depth
+local_stack = 0xffe0bc6c - *local_stack = 0x80484f9
+local_stack = 0xffe0bc68 - *local_stack = 0xffe0bc98
+local_stack = 0xffe0bc64 - *local_stack = 0xf75be618
+local_stack = 0xffe0bc60 - *local_stack = 0x287
+local_stack = 0xffe0bc5c - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bc58 - *local_stack = 0x156b2bb8
+local_stack = 0xffe0bc54 - *local_stack = 0x8048257
+local_stack = 0xffe0bc50 - *local_stack = 0xf77ba000
+local_stack = 0xffe0bc4c - *local_stack = (nil)
+local_stack = 0xffe0bc48 - *local_stack = 0x3
+local_stack = 0xffe0bc44 - *local_stack = 0xffe0bc90
+local_stack = 0xffe0bc40 - *local_stack = 0x9         # valeur de depth
+local_stack = 0xffe0bc3c - *local_stack = 0x80484f9
+local_stack = 0xffe0bc38 - *local_stack = 0xffe0bc68
+local_stack = 0xffe0bc34 - *local_stack = 0x287
+local_stack = 0xffe0bc30 - *local_stack = 0xf75b7798
+local_stack = 0xffe0bc2c - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bc28 - *local_stack = 0x1
+local_stack = 0xffe0bc24 - *local_stack = 0xf779f65d
+local_stack = 0xffe0bc20 - *local_stack = 0x156b2bb8
+local_stack = 0xffe0bc1c - *local_stack = 0xf7765000
+local_stack = 0xffe0bc18 - *local_stack = 0x287
+local_stack = 0xffe0bc14 - *local_stack = 0xf75b3388
+local_stack = 0xffe0bc10 - *local_stack = 0xa         # valeur de depth
+local_stack = 0xffe0bc0c - *local_stack = 0x80484f9
+local_stack = 0xffe0bc08 - *local_stack = 0xffe0bc38
+local_stack = 0xffe0bc04 - *local_stack = 0xd696910
+local_stack = 0xffe0bc00 - *local_stack = 0xf77b8e18
+local_stack = 0xffe0bbfc - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bbf8 - *local_stack = 0xffe0bcc0
+local_stack = 0xffe0bbf4 - *local_stack = 0xf7765000
+local_stack = 0xffe0bbf0 - *local_stack = 0xf75b7008
+local_stack = 0xffe0bbec - *local_stack = 0x8048289
+local_stack = 0xffe0bbe8 - *local_stack = 0xf75c42e5
+local_stack = 0xffe0bbe4 - *local_stack = 0xf779ef80
+local_stack = 0xffe0bbe0 - *local_stack = 0xb         # valeur de depth
+local_stack = 0xffe0bbdc - *local_stack = 0x80484f9
+local_stack = 0xffe0bbd8 - *local_stack = 0xffe0bc08
+local_stack = 0xffe0bbd4 - *local_stack = 0xf77965c5
+local_stack = 0xffe0bbd0 - *local_stack = 0xffe0bbe8
+local_stack = 0xffe0bbcc - *local_stack = 0xcafebabe  # valeur de rec_local
+local_stack = 0xffe0bbc8 - *local_stack = 0xf77ba000
+local_stack = 0xffe0bbc4 - *local_stack = (nil)
+local_stack = 0xffe0bbc0 - *local_stack = (nil)
+local_stack = 0xffe0bbbc - *local_stack = 0x80484e8
+local_stack = 0xffe0bbb8 - *local_stack = 0xffe0bbd8
+local_stack = 0xffe0bbb4 - *local_stack = (nil)
+local_stack = 0xffe0bbb0 - *local_stack = (nil)
+local_stack = 0xffe0bbac - *local_stack = 0xfacade  # valeur de local (dump_stack)
