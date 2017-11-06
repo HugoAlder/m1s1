@@ -34,6 +34,7 @@ int main() {
     int t = current_vol.type;
     char * type;
     printf("\n");
+
     if(t == 0) {
       type = "Base";
     } else if(t == 1) {
@@ -41,6 +42,7 @@ int main() {
     } else {
       type = "Other";
     }
+
     printf("Volume : %d\nCylinder : %d\nBlock : %d\nSize : %d\nType : %s\n", i, current_vol.fst_cyl, current_vol.fst_sec, current_vol.nblock, type);
   }
 

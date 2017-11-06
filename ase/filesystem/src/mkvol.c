@@ -10,11 +10,12 @@ void empty_it(void){
 }
 
 void usage() {
-  printf("mkvol <cyl> <sec> <size> \n");
+  printf("mkvol <cyl> <sec> <size> <type> <name>\n");
 }
 
 int main (int argc, char ** argv) {
   int i;
+  int e;
 
   if(init_hardware(HARDWARE_INI) == 0) {
     fprintf(stderr, "Error in hardware initialization\n");
@@ -25,7 +26,7 @@ int main (int argc, char ** argv) {
     IRQVECTOR[i] = empty_it;
   }
 
-  if(argc != 4) {
+  if(argc != 6) {
     usage();
     return 1;
   }
@@ -36,10 +37,27 @@ int main (int argc, char ** argv) {
   mbr.vol[mbr.nvol].fst_cyl = atoi(argv[1]);
   mbr.vol[mbr.nvol].fst_sec = atoi(argv[2]);
   mbr.vol[mbr.nvol].nblock = atoi(argv[3]);
-  mbr.vol[mbr.nvol].type = ANNEXE;
-  mbr.nvol++;
+
+  switch(atoi(argv[4])) {
+    case 0 :
+      e = BASE;
+      break;
+    case 1 :
+      e = ANNEXE;
+      break;
+    default :
+      e = OTHER;
+      break;
+  }
+
+  mbr.vol[mbr.nvol].type = e;
 
   printf("Saving MBR\n");
+
+  printf("Initializating superblock\n");
+  init_super(mbr.nvol, 0x6969, argv[5]);
+
+  mbr.nvol++;
   save_mbr();
 
   printf("Volume %d added successfully\n", mbr.nvol);

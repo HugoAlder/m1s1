@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "hardware.h"
 #include "hconf.h"
 #include "mbr.h"
@@ -19,11 +20,11 @@ void load_mbr() {
 }
 
 int cyl_of_block(int vol, int block) {
-  return mbr.vol[vol].fst_cyl + ((mbr.vol[vol].fst_sec + block) / NB_SEC);
+  return (mbr.vol[vol].fst_cyl + mbr.vol[vol].fst_sec + block) % NB_SEC;
 }
 
 int sec_of_block(int vol, int block) {
-  return (mbr.vol[vol].fst_sec + block) % NB_SEC;
+  return (mbr.vol[vol].fst_sec + block) % SECTOR_SIZE;
 }
 
 void read_block_n(int vol, int block, unsigned char * buf, int size) {
@@ -46,11 +47,11 @@ void init_super(int vol, int serial, char * name) {
 
   for(i = 1; i < mbr.vol[vol].nblock - 1; i++){
     freeblock.next = i + 1;
-    write_block_n(vol, i, (unsigned char) &freeblock, sizeof(freeblock));
+    write_block_n(vol, i, (unsigned char *) &freeblock, sizeof(freeblock));
   }
 
   freeblock.next = BLOCK_NULL;
-  write_block_n(vol, i, (unsigned char) &freeblock, sizeof(freeblock));
+  write_block_n(vol, i, (unsigned char *) &freeblock, sizeof(freeblock));
 
   current_vol = vol;
   save_super();
@@ -67,5 +68,20 @@ int load_super(int vol) {
 }
 
 void save_super() {
-  write_block_n(current_vol, 1, (unsigned char *) &superblock, sizeof(superblock));
+  write_block_n(current_vol, 0, (unsigned char *) &superblock, sizeof(superblock));
+}
+
+int new_block() {
+  int res;
+  struct freeblock_s freelist;
+
+  assert(superblock.magic == MAGIC_SB);
+  res = superblock.fst_freeblock;
+  if(res == BLOCK_NULL) {
+    return res;
+  }
+  read_block_n(current_vol, res, (unsigned char *) &freelist, sizeof(freelist));
+  superblock.fst_freeblock = freelist.next;
+  save_super();
+  return res;
 }

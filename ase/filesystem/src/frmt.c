@@ -13,7 +13,7 @@ void empty_it(void) {
 void frmt() {
   int cyl;
   for(cyl = 0; cyl < NB_CYL; cyl++) {
-    format_sector(cyl, 0, NB_SEC, 0);
+    format_sector(cyl, 0, NB_SEC, 0xAFAFAFAF);
   }
 }
 
