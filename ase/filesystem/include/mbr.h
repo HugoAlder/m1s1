@@ -30,10 +30,9 @@ struct superblock_s superblock;
 
 void save_mbr();
 void load_mbr();
-void read_block(int vol, int block, unsigned char nb, int size);
+void read_block(unsigned int vol, unsigned int nblock, unsigned char * buffer);
+void write_block(unsigned int vol, unsigned int nblock, const unsigned char * buffer);
+void read_block_n(int vol, int block, unsigned char * buf, int size);
+void write_block_n(int vol, int block, unsigned char * buf, int size);
 int sec_of_block(int vol, int block);
 int cyl_of_block(int vol, int block);
-void init_super(int vol, int serial, char * name);
-int load_super(int vol);
-void save_super();
-int new_block();

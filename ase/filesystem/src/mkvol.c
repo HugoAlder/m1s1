@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "drive.h"
 #include "mbr.h"
 #include "hardware.h"
 #include "hconf.h"
+#include "vol.h"
 
 void empty_it(void){
   return;

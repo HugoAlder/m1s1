@@ -5,7 +5,7 @@ CFLAGS  += -g
 INCDIR  = -Iinclude
 LIBS    = -Llib -lhardware
 
-ALL = bin/mkhd bin/dmps bin/frmt bin/dvol bin/mkvol
+ALL = bin/mkhd bin/dmps bin/frmt bin/dvol bin/mkvol bin/inode
 
 all: $(ALL)
 
@@ -22,6 +22,9 @@ bin/dvol: bin/dvol.o bin/drive.o bin/mbr.o
 		$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 bin/mkvol: bin/mkvol.o bin/drive.o bin/mbr.o
+		$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+bin/inode: bin/inode.o bin/mbr.o bin/drive.o
 		$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 bin/%.o: src/%.c
