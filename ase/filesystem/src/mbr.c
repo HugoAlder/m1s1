@@ -20,19 +20,19 @@ void load_mbr() {
 }
 
 int cyl_of_block(int vol, int block) {
-  return (mbr.vol[vol].fst_cyl + mbr.vol[vol].fst_sec + block) % NB_SEC;
+  return mbr.vol[vol].fst_cyl + (mbr.vol[vol].fst_sec + block) / NB_SEC;
 }
 
 int sec_of_block(int vol, int block) {
-  return (mbr.vol[vol].fst_sec + block) % SECTOR_SIZE;
+  return (mbr.vol[vol].fst_sec + block) % NB_SEC;
 }
 
-void read_block(unsigned int vol, unsigned int nblock, unsigned char * buffer) {
-  read_sector_n(cyl_of_block(vol, nblock), mbr.vol[vol].fst_sec, nblock, buffer);
+void read_block(unsigned int vol, unsigned int block, unsigned char * buf) {
+  read_sector(cyl_of_block(vol, block), sec_of_block(vol, block), buf);
 }
 
-void write_block(unsigned int vol, unsigned int nblock, const unsigned char * buffer) {
-  write_sector_n(cyl_of_block(vol, nblock), mbr.vol[vol].fst_sec, nblock, buffer);
+void write_block(unsigned int vol, unsigned int block, unsigned char * buf) {
+  write_sector(cyl_of_block(vol, block), sec_of_block(vol, block), buf);
 }
 
 void read_block_n(int vol, int block, unsigned char * buf, int size) {
@@ -40,5 +40,7 @@ void read_block_n(int vol, int block, unsigned char * buf, int size) {
 }
 
 void write_block_n(int vol, int block, unsigned char * buf, int size) {
+  printf("Cyl of block %d\n", cyl_of_block(vol, block));
+  printf("Sec of block%d\n", sec_of_block(vol, block));
   write_sector_n(cyl_of_block(vol, block), sec_of_block(vol, block), size, buf);
 }
