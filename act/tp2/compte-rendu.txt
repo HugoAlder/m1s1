@@ -1,0 +1,29 @@
+ALDER Hugo
+Compte-rendu TP Chocolat
+
+Q1. Les valeurs des positions sont, du haut vers le bas et de la gauche vers la droite : +3, +1, -2, +1, +1 et 0.
+
+Q2. Si il n'y a pas de nombres inférieurs à 0 : k = - (max(successeurs) + 1).
+    Si il y a des nombres inférieurs ou égaux à 0 : k = max(|successeurs négatifs|) + 1.
+
+Q3. (10, 7, 7, 3) - résultat : 11, temps : 20 minutes
+	(10, 7, 5, 3) - résultat : 15, temps : 20 minutes
+	Il n'y a pas de différence de temps d'execution entre ces 2 algorithmes car dans tous les cas il faut parcourir complétement la plaquette.
+	La complexité de cet algorithme est exponentielle car à chaque récursif il faut calculer toutes les valeurs possibles pour la configuration actuelle.
+
+Q4.	(100, 100, 50, 50) - résultat : - 198, temps : 0:27:16.594487
+	(100, 100, 48, 52) - résultat : 191, temps : 0:26:16.658234
+
+Q5.	
+
+Q6.	
+
+Q7.	Toutes ces configurations ont la même valeur car le carré de la mort est situé de manière symétrique soit par rapport à l'axe horizontal (figures 1 et 2 
+	et figures 3 et 4), soit par rapport à l'axe vertical (figures 1 et 3 et figures 2 et 4). La taille de la plaquette ne change pas, donc il sagit bien de
+	la même configuration : le carré de la mort est toujours à 1 carré de distance du côté à 4 carrés et sur le bord de l'autre côté.
+	Les 4 dernières figures correspondent aux 4 premières, comme si la plaquette était tournée différemment.
+
+Q8.	(100, 100, 50, 50) - résultat : - 198, temps : 0:03:29.655380
+	(100, 100, 48, 52) - résultat : 191, temps : 0:03:59.631183
+
+Q10.
