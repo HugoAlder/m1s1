@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import sys
@@ -16,18 +16,18 @@ class Data:
 
 # Génére un objet Data à partir des données du fichier filename
 def get_data(filename):
-    with open(filename) as f:
-        m = int(f.read(1))
-        f.read(1)
-        n = int(f.read(1))
-        t = [[0 for x in range(2)] for y in range(n)]
-        for x in range (0, n):
-            for y in range (0, 2):
-                f.read(1)
-                t[x][y] = int(f.read(1))
-        f.read(1)
-        d = int(f.read(1))
-        data = Data(m, n, t, d)
+    f = open(filename)
+    m = int(f.read(1))
+    f.read(1)
+    n = int(f.read(1))
+    t = [[0 for x in range(2)] for y in range(n)]
+    for x in range (0, n):
+        for y in range (0, 2):
+            f.read(1)
+            t[x][y] = int(f.read(1))
+    f.read(1)
+    d = int(f.read(1))
+    data = Data(m, n, t, d)
     return data
 
 # Génére un Certificat aléatoire à partir des données de data
@@ -60,15 +60,15 @@ def check_certificat(d, c):
     for x in range (0, len(c)):
         tmp.append(c[x][0])
     if (d.m != max(tmp) + 1):
-        print("Erreur : nombre de machines")
+        print "Erreur : nombre de machines"
         return False
     # Nombre de tâches
     if (len(c) != d.n):
-        print("Erreur : nombre de tâches")
+        print "Erreur : nombre de tâches"
         return False
     # Ordonnancement
     for x in range (0, d.m + 1):
-        print("Machine ", x)
+        print "Machine ", x
         dep = []
         fin = []
         for y in range (0, d.n):
@@ -76,13 +76,13 @@ def check_certificat(d, c):
                 dep.append(c[y][1])
                 fin.append(c[y][1] + d.t[y][1])
         if (check_dispo(dep, fin) == False):
-            print("Erreur : ordonnancement")
+            print "Erreur : ordonnancement"
             return False
     return True
 
 def british_museum(d):
     c = [[0 for x in range(2)] for y in range(n)]
-    while check_certificat(c) == False:
+    while == False:
         for x in (0, d.n):
             for y in (0, d.m):
                 for z in (0, d.d):
@@ -91,21 +91,21 @@ def british_museum(d):
 
 if __name__ == '__main__':
     if (len(sys.argv) != 3):
-        print("Usage : part1.py <file> <mode>")
+        print "Usage : part1.py <file> <mode>"
         sys.exit()
     data = get_data(sys.argv[1])
 
     if (sys.argv[2] == "-verif"):
         certificat = [[0 for a in range(2)] for b in range(data.n)]
         for x in range (0, data.n):
-            print("Task", x)
-            m = input("Machine: ")
+            print "Task", x
+            m = raw_input("Machine: ")
             certificat[x][0] = int(m)
-            dep = input("Depart: ")
+            dep = raw_input("Depart: ")
             certificat[x][1] = int(dep)
 
     elif (sys.argv[2] == "-nondet"):
         certificat = alea(data)
 
-    print("Certificat:", certificat)
-    print("Résultat: ", check_certificat(data, certificat))
+    print "Certificat:", certificat
+    print "Résultat: ", check_certificat(data, certificat)
