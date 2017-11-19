@@ -1,14 +1,20 @@
 ACT - TP3
+Seys Nicolas
 Alder Hugo
 
-Q1.   Un certificat sera représenté sous la forme d'un tableau à 2 colonnes et n lignes.
+-- 1 - Qu’est-ce qu’une propriété NP
+
+Q1.   Un certificat sera représenté sous la forme d'un tableau à 2 colonnes et n
+      lignes.
       Chaque ligne représente une tâche.
       La première colonne représente la machine utilisée.
       La deuxième colonne représente la date de début de la tâche.
-      La taille d'un certificat est donc bien bornée polynomialement par rapport à la taille de l'entrée.
+      La taille d'un certificat est donc bien bornée polynomialement par rapport
+      à la taille de l'entrée.
 
       Pour chaque tâche ni
-        La machine mi ne doit pas être utilisée par une autre tâche pendant la durée de ni
+        La machine mi ne doit pas être utilisée par une autre tâche pendant la
+        durée de ni
 
 Q2.1  Initialisation du certificat c[n][2]
       Pour chaque tâche ni
@@ -23,11 +29,47 @@ Q2.2  Génération aléatoire d'un certificat c
 
 Q3.1  Pour une instance donnée, le nombre de certificats est n * m * (D + 1).
 
-Q3.2  On propose comme ordre de d'abord modifier les machines, puis les dates de départ.
+Q3.2  On propose comme ordre de d'abord modifier les machines, puis les dates de
+      départ.
 
 Q3.3  Initialisation du certificat c[n][2]
       On affecte à c les valeurs de départ
       Tant que c n'est pas un certificat correct
-      Complexité de l'algorithme : n * m * (D + 1). On vérifie tous les certificats dans le pire des cas.
+      Complexité de l'algorithme : n * m * (D + 1). On vérifie tous les
+      certificats dans le pire des cas.
         On test une nouvelle combinaison pour c
       Retourner c
+
+-- 2 - Réductions polynomiales
+
+Q5.  TODO
+
+Q5.1 Si on réduit une instance du problème Partition en une instance de JSP,
+     le problème devient au moins aussi facile que JSP.
+
+Q5.2 Non, car une instance de JSP est definie par un tableau à 2 dimensions.
+
+Q5.3 TODO (A implementer)
+
+Q6.1 Le certificat du problème SUM se présente sous la forme tableau d'entier de
+     taille inférieur ou égale à n soit θ(2n log n) ce qui est polynomial par
+     rapport à n.
+
+     On peut vérifier en faisant la somme des nombres contenu dans le certificat
+     et renvoie vrai si le résultat est égal à s.
+     Etant donné qu'on réalise qu'un parcours du certificat, le problème est
+     polynomial.
+     Le problème est NP puisque la vérification et le certificat sont 
+     polynomial.
+
+Q6.2 Si s vaut la moitié de la somme des xi, on a une instance de Partition.
+
+Q6.3 TODO
+
+Q7.  TODO (A implementer)
+
+-- 3 - Optimisation versus Décision
+
+Q8.  TODO
+
+Q9. Opt1 est au moins aussi dur que JSP car si JSP est P, Opt1 peut l’être aussi.
