@@ -2,7 +2,6 @@
 
 #include "mbr.h"
 #include "inode.h"
-#include "vol.h"
 
 void read_inode(unsigned int inumber, struct inode_s * inode) {
   assert(superblock.magic == MAGIC_SB);
@@ -74,6 +73,6 @@ void free_indirect(unsigned int indirect) {
   free_block(indirect);
 }
 
-int main () {
-  return 0;
+unsigned int vlobck_of_fblock(unsigned int inumber, unsigned int fblock) {
+  
 }

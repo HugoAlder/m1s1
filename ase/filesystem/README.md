@@ -1,4 +1,4 @@
-TODO
+TODO inodes
 
 inode.c/inode.h => inode.o
 
@@ -11,3 +11,9 @@ inode.c/inode.h => inode.o
 + modif de frmt_vol <vol>
 
 Création du répertoire racine (create inode) pour le volume
+
+TODO ifile
+
+Voir encart p10.
+
+Mettre les commandes à executer dans le README pour qu'on puisse juste les copier/coller et les executer sur un disque vierge.

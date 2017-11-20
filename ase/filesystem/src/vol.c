@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "vol.h"
 #include "mbr.h"
 #include "drive.h"
 #include "hconf.h"
@@ -60,33 +59,4 @@ int new_block() {
 
 void free_block(unsigned int block) {
   return;
-}
-void format_vol(unsigned int vol) {
-
-  int i, j, more, ncyl;
-  signed int sec = mbr.vol[vol].fst_sec;
-  unsigned int lim = mbr.vol[vol].nblock;
-  unsigned int cyl = cyl_of_block(vol, lim);
-
-  if(sec + lim < NB_SEC) {
-    format_sector(cyl, sec, sec + lim, 0);
-  } else {
-    /* First sectors of the first cylinder */
-    i = NB_SEC - sec;
-    format_sector(cyl, sec, i, 0);
-
-    /* Removing the previous sectors already formated */
-    lim = lim - i;
-
-    /* Number of cylinders */
-    ncyl = lim / NB_SEC;
-    for(j = cyl + 1; j < ncyl; j++) {
-      /* Sectors of the cylinders */
-      format_sector(j, 0, NB_SEC, 0);
-    }
-
-    /* Last sectors of the last cylinder of the volume */
-    more = lim % NB_SEC;
-      format_sector(j + 1, 0, more, 0);
-  }
 }

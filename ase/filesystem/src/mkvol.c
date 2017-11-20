@@ -5,7 +5,6 @@
 #include "mbr.h"
 #include "hardware.h"
 #include "hconf.h"
-#include "vol.h"
 
 void empty_it(void){
   return;

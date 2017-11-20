@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "drive.h"
+
 #include "mbr.h"
+#include "drive.h"
 #include "hardware.h"
 #include "hconf.h"
 

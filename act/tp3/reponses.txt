@@ -79,3 +79,9 @@ Q7.  TODO (A implementer)
 Q8.  TODO
 
 Q9. Opt1 est au moins aussi dur que JSP car si JSP est P, Opt1 peut l’être aussi.
+
+POUR TP4 :
+
+Etape 1 : DUR   permutation -> solution
+Etape 2 : MOYEN fonction d'évaluation
+Etape 3 : FACILE heuristique qui trouve une bonne permutation 

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+
 #include "hardware.h"
 #include "hconf.h"
 #include "mbr.h"
@@ -40,7 +41,5 @@ void read_block_n(int vol, int block, unsigned char * buf, int size) {
 }
 
 void write_block_n(int vol, int block, unsigned char * buf, int size) {
-  printf("Cyl of block %d\n", cyl_of_block(vol, block));
-  printf("Sec of block%d\n", sec_of_block(vol, block));
   write_sector_n(cyl_of_block(vol, block), sec_of_block(vol, block), size, buf);
 }
