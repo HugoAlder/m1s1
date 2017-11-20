@@ -25,9 +25,7 @@ def get_data(filename):
             for y in range (0, 2):
                 f.read(1)
                 t[x][y] = int(f.read(1))
-        f.read(1)
-        d = int(f.read(1))
-        data = Data(m, n, t, d)
+        data = Data(m, n, t, 0)
     return data
 
 # Génére un Certificat aléatoire à partir des données de data
@@ -49,26 +47,18 @@ def check_dispo(dep, fin):
             if (x != x2):
                 if (dep[x2] >= dep[x] and dep[x2] < fin[x]):
                     return False
-                if (fin[x2] > dep[x] and fin[x2] < fin[x]):
+                if (fin[x2] > dep[x] and fin[x2] <= fin[x]):
                     return False
     return True
 
 # Vérifie si le certificat c est correct d'aprés les données d disponibles
 def check_certificat(d, c):
-    # Nombre de machines
-    tmp = []
-    for x in range (0, len(c)):
-        tmp.append(c[x][0])
-    if (d.m != max(tmp) + 1):
-        print("Erreur : nombre de machines")
-        return False
     # Nombre de tâches
     if (len(c) != d.n):
         print("Erreur : nombre de tâches")
         return False
     # Ordonnancement
     for x in range (0, d.m + 1):
-        print("Machine ", x)
         dep = []
         fin = []
         for y in range (0, d.n):
@@ -80,6 +70,7 @@ def check_certificat(d, c):
             return False
     return True
 
+# Génére et test toutes les combinaisons de certificat possibles pour les données d
 def british_museum(d):
     c = [[0 for x in range(2)] for y in range(n)]
     while check_certificat(c) == False:
@@ -90,10 +81,11 @@ def british_museum(d):
                     c[x][1] = d.t[x][0] + z
 
 if __name__ == '__main__':
-    if (len(sys.argv) != 3):
-        print("Usage : part1.py <file> <mode>")
+    if (len(sys.argv) != 4):
+        print("Usage : part1.py <file> <mode> <attenteMax>")
         sys.exit()
     data = get_data(sys.argv[1])
+    data.d = int(sys.argv[3])
 
     if (sys.argv[2] == "-verif"):
         certificat = [[0 for a in range(2)] for b in range(data.n)]
@@ -106,6 +98,12 @@ if __name__ == '__main__':
 
     elif (sys.argv[2] == "-nondet"):
         certificat = alea(data)
+        while(check_certificat(data, certificat) == False):
+            print(certificat)
+            certificat = alea(data)
+
+    elif (sys.argv[2] == "-exhaust"):
+        certificat = british_museum(data)
 
     print("Certificat:", certificat)
     print("Résultat: ", check_certificat(data, certificat))

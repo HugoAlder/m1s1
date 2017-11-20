@@ -13,13 +13,17 @@ Q1.   Un certificat sera représenté sous la forme d'un tableau à 2 colonnes e
       à la taille de l'entrée.
 
       Pour chaque tâche ni
+        Vérifier que ai <= départ <= ai + D
         La machine mi ne doit pas être utilisée par une autre tâche pendant la
         durée de ni
+
+        La taille d'un certificat est alors 2 * n. Elle est donc bien bornée
+        polynomialement.
 
 Q2.1  Initialisation du certificat c[n][2]
       Pour chaque tâche ni
         c[ni][0] = une machine aléatoire entre 0 et m-1
-        c[ni][1] = une date de départ aléatoire comprise entre a1 et a1 + D
+        c[ni][1] = une date de départ aléatoire comprise entre a1 et a1 + D.
       Retourner c
 
 Q2.2  Génération aléatoire d'un certificat c
@@ -35,10 +39,12 @@ Q3.2  On propose comme ordre de d'abord modifier les machines, puis les dates de
 Q3.3  Initialisation du certificat c[n][2]
       On affecte à c les valeurs de départ
       Tant que c n'est pas un certificat correct
-      Complexité de l'algorithme : n * m * (D + 1). On vérifie tous les
-      certificats dans le pire des cas.
         On test une nouvelle combinaison pour c
       Retourner c
+
+      Complexité de l'algorithme : n * m * (D + 1). On vérifie tous les
+      certificats possibles dans le pire des cas.
+
 
 -- 2 - Réductions polynomiales
 
@@ -47,7 +53,7 @@ Q5.  TODO
 Q5.1 Si on réduit une instance du problème Partition en une instance de JSP,
      le problème devient au moins aussi facile que JSP.
 
-Q5.2 Non, car une instance de JSP est definie par un tableau à 2 dimensions.
+Q5.2 Non, car une instance de JSP est définie par un tableau à 2 dimensions.
 
 Q5.3 TODO (A implementer)
 
@@ -59,7 +65,7 @@ Q6.1 Le certificat du problème SUM se présente sous la forme tableau d'entier 
      et renvoie vrai si le résultat est égal à s.
      Etant donné qu'on réalise qu'un parcours du certificat, le problème est
      polynomial.
-     Le problème est NP puisque la vérification et le certificat sont 
+     Le problème est NP puisque la vérification et le certificat sont
      polynomial.
 
 Q6.2 Si s vaut la moitié de la somme des xi, on a une instance de Partition.
