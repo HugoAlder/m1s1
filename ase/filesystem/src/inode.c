@@ -74,5 +74,44 @@ void free_indirect(unsigned int indirect) {
 }
 
 unsigned int vlobck_of_fblock(unsigned int inumber, unsigned int fblock) {
-  
+  struct inode_s inode;
+  unsigned int t[NB_INDIRECT];
+  int index1, index2;
+
+  read_inode(inumber, &inode);
+  if (fblock < NB_DIRECT) {
+    return inode.direct[fblock];
+  }
+
+  fblock -= NB_INDIRECT;
+
+  if (fblock < NB_INDIRECT) {
+    if (inode.indirect == BLOCK_NULL) {
+      return BLOCK_NULL;
+    }
+    read_block(current_vol, inode.indirect, (unsigned char *) t);
+    return t[fblock];
+  }
+
+  fblock -= NB_INDIRECT;
+
+  if (!inode.indirect2) {
+    return BLOCK_NULL;
+  }
+
+  index2 = fblock / NB_INDIRECT;
+  index1 = fblock % NB_INDIRECT;
+  read_block(current_vol, inode.indirect2, (unsigned char *) t);
+
+  if (!t[index2]) {
+    return BLOCK_NULL;
+  }
+
+  read_block(current_vol, t[index2], (unsigned char *) t);
+
+  if (!t[index1]) {
+    return BLOCK_NULL;
+  }
+
+  return t[index1];
 }
