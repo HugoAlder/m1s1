@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <title>Lou lou lou je mange des pommes</title>
+  </head>
+  <body>
+    <div id="youpi">
+
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function youpi() {
+    $.get(
+      "jpperno",
+      {},
+      function(data) {
+        $("#youpi").text(data);
+        youpi();
+      }
+    );
+  }
+  youpi();
+</script>
