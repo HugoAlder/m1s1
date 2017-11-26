@@ -14,7 +14,7 @@ class Data:
     def __str__(self):
         return "({}, {}, {}, {})".format(self.m, self.n, self.t, self.d)
 
-# Génére un objet Data à partir des données du fichier filename
+# Genere un objet Data à partir des données du fichier filename
 def get_data(filename):
     with open(filename) as f:
         m = int(f.read(1))
@@ -45,34 +45,37 @@ def check_dispo(dep, fin):
     for x in range (0, l):
         for x2 in range(0, l):
             if (x != x2):
-                if (dep[x2] >= dep[x] and dep[x2] < fin[x]):
+                if (dep[x] >= dep[x2] and dep[x] < fin[x2]):
                     return False
-                if (fin[x2] > dep[x] and fin[x2] <= fin[x]):
+                if (fin[x] > dep[x2] and fin[x] <= fin[x2]):
                     return False
     return True
 
 # Vérifie si le certificat c est correct d'aprés les données d disponibles
 def check_certificat(d, c):
-    # Nombre de tâches
-    if (len(c) != d.n):
-        print("Erreur : nombre de tâches")
-        return False
-    # Ordonnancement
-    for x in range (0, d.m + 1):
-        dep = []
-        fin = []
-        for y in range (0, d.n):
-            if (c[y][0] == x):
-                dep.append(c[y][1])
-                fin.append(c[y][1] + d.t[y][1])
-        if (check_dispo(dep, fin) == False):
-            print("Erreur : ordonnancement")
+    # Pour chaque machine
+    for m in range(0, d.m):
+        tDep = []
+        tFin = []
+        # Pour chaque tache de la machine m
+        for n in range(0, d.n):
+            if (c[n][0] == m):
+                dep = c[n][1]
+                fin = dep + d.t[n][1] - 1
+                tDep.append(dep)
+                tFin.append(fin)
+        # On verifie si les valeurs sont correctes
+        # print("tDep : {}".format(tDep))
+        # print("tFin : {}".format(tFin))
+        dispo = check_dispo(tDep, tFin)
+        if (dispo == False):
+            print("Erreur : ordonnancement machine {}".format(m))
             return False
     return True
 
-# Génére et test toutes les combinaisons de certificat possibles pour les données d
+# Genere et test toutes les combinaisons de certificat possibles pour les données d
 def british_museum(d):
-    c = [[0 for x in range(2)] for y in range(n)]
+    c = [[0 for x in range(2)] for y in range(d.n)]
     while check_certificat(c) == False:
         for x in (0, d.n):
             for y in (0, d.m):
@@ -106,4 +109,4 @@ if __name__ == '__main__':
         certificat = british_museum(data)
 
     print("Certificat:", certificat)
-    print("Résultat: ", check_certificat(data, certificat))
+    print("Resultat: ", check_certificat(data, certificat))
