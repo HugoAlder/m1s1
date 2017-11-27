@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import itertools
 from random import randint
 
 class Data:
@@ -75,13 +76,14 @@ def check_certificat(d, c):
 
 # Genere et test toutes les combinaisons de certificat possibles pour les données d
 def british_museum(d):
+    machines = []
     c = [[0 for x in range(2)] for y in range(d.n)]
-    while check_certificat(c) == False:
-        for x in (0, d.n):
-            for y in (0, d.m):
-                for z in (0, d.d):
-                    c[x][0] = y
-                    c[x][1] = d.t[x][0] + z
+    for m in range(0, d.m):
+        machines.append(m)
+    #while check_certificat(c) == False:
+    print(machines)
+    print(list(itertools.permutations(machines)))
+    return c
 
 if __name__ == '__main__':
     if (len(sys.argv) != 4):
@@ -93,7 +95,7 @@ if __name__ == '__main__':
     if (sys.argv[2] == "-verif"):
         certificat = [[0 for a in range(2)] for b in range(data.n)]
         for x in range (0, data.n):
-            print("Task", x)
+            print("Tache", x)
             m = input("Machine: ")
             certificat[x][0] = int(m)
             dep = input("Depart: ")
