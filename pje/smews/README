@@ -1,0 +1,19 @@
+Smews development version
+=========================
+
+License: CeCILL license, http://www.cecill.info
+Date: 2013-04-09
+Contact: Simon Duquennoy -- simonduq@sics.se
+	 Gilles Grimaud -- gilles.grimaud@lifl.fr
+	 Michael Hauspie -- michael.hauspie@lifl.fr
+Web page: http://cristal.univ-lille1.fr/2XS/smews
+
+Smews is an efficient embedded Web server for highly constrained devices.
+
+This software includes parts of code from SOSSE (Simple Operating system for Smart cards)
+http://www.mbsks.franken.de/sosse/, under GPL license :
+targets/Funcard7/drivers/at_config.h
+targets/Funcard7/drivers/eepromi2c.s
+targets/Funcard7/drivers/io.s
+
+Please read the user guide to get started.
