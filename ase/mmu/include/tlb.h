@@ -1,5 +1,5 @@
-static int virtualaddr = 0;
 static int current_process;
+static int virtualaddr = 0;
 
 struct entry_s {
   unsigned int RFU : 8;
