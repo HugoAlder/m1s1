@@ -1,0 +1,10 @@
+Command line:
+   masterbench_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49189
+
+Wed Nov 15 11:14:21 2017
+
+
+ Elaboration Time: 0.07 sec

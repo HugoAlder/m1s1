@@ -1,0 +1,36 @@
+Release 12.4 ngdbuild M.81d (lin64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/12.4/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc
+compt.ngd
+
+Reading NGO file "/home/l3/alder/Documents/AEO/TPcontrol/compt.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "compt.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 254268 kilobytes
+
+Writing NGD file "compt.ngd" ...
+Total REAL time to NGDBUILD completion:  1 sec
+Total CPU time to NGDBUILD completion:   1 sec
+
+Writing NGDBUILD log file "compt.bld"...

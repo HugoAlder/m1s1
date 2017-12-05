@@ -1,0 +1,4 @@
+vhdl work "x7seg.vhd"
+vhdl work "display_fsm.vhd"
+vhdl work "clkdiv.vhd"
+vhdl work "display.vhd"

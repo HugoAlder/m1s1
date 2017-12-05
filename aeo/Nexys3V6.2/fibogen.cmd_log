@@ -1,0 +1,1 @@
+vhdtdtfi -prj Nexys3V6 -o /home/l3/alder/Documents/AEO/Nexys3V6/fibogen.vhi -lib work /home/l3/alder/Documents/AEO/Nexys3V6//fibogen.vhd -module fibogen -template /opt/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 

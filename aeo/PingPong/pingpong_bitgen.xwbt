@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/l3/alder/Documents/AEO/PingPong/pingpong.ncd
+OUTFILE=/home/l3/alder/Documents/AEO/PingPong/pingpong.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/l3/alder/Documents/AEO/PingPong
+LICENSE=WebPack
+USER_INFO=0_0_579

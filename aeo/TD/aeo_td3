@@ -1,0 +1,66 @@
+Ex 1
+
+Q1. 
+
+ENTITY exo2 IS 
+
+PORT
+(
+	a : IN STD_LOGIC;
+	b : IN STD_LOGIC;
+	c : IN STD_LOGIC;
+	d : IN STD_LOGIC;
+	adr : IN STD_LOGIC_VECTOR (1 downto 0);
+	s : OUT STD_LOGIC
+);
+
+END exo2;
+
+ARCHITECTURE Archi1exo2 OF exo2 IS
+
+BEGIN
+	PROCESS (adr) # <- liste de sensibilité
+	BEGIN
+		CASE adr IS
+			WHEN "00" => s <= a;
+			WHEN "01" => s <= b;
+			WHEN "10" => s <= c;
+			WHEN others => s <= d;
+		END CASE
+	END PROCESS
+END Archi1exo2;
+
+Q2.
+
+
+PROCESS (sw)
+BEGIN
+	CASE sw IS
+		WHEN 
+
+Q3.
+
+Seul H est complet. 
+F ne change que si a(1) = 0.
+G ne change que si a  = 01 ou 01 (= Xor).
+
+Latch : système de mémorisation non-clocké. Arrive par ex si on ne check pas toutes les conditions d'un if.
+
+Ex 2
+
+A.
+
+PROCESS (adr)
+variable sout:std_logic;
+BEGIN
+	CASE adr IS
+		WHEN "00" => sout <= a;
+		WHEN "01" => sout <= b;
+		WHEN "01" => sout <= c;
+		WHEN others => sout <= d;
+	END CASE
+	s <= sout
+END PROCESS
+
+B.3 process s <= "0000" case E when "00" => S(0) <= 1 (ainsi de suite pour chaque case de S) ...
+B. 4 

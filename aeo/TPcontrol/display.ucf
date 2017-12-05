@@ -1,0 +1,35 @@
+## 7 segment display
+Net "seg<0>" LOC = T17;
+Net "seg<1>" LOC = T18;
+Net "seg<2>" LOC = U17;
+Net "seg<3>" LOC = U18;
+Net "seg<4>" LOC = M14;
+Net "seg<5>" LOC = N14;
+Net "seg<6>" LOC = L14;
+#Net "seg<7>" LOC = M13;
+
+Net "an<0>" LOC = N16;
+Net "an<1>" LOC = N15;
+Net "an<2>" LOC = P18;
+Net "an<3>" LOC = P17;
+
+
+## Switches
+Net "sw<0>" LOC = T10;
+Net "sw<1>" LOC = T9;
+Net "sw<2>" LOC = V9;
+Net "sw<3>" LOC = M8;
+Net "sw<4>" LOC = N8;
+Net "sw<5>" LOC = U8;
+Net "sw<6>" LOC = V8;
+Net "sw<7>" LOC = T5;
+
+## Buttons
+Net "btns" LOC = B8;
+#Net "btnu" LOC = A8;
+#Net "btnl" LOC = C4;
+#Net "btnd" LOC = C9;
+#Net "btnr" LOC = D9;
+
+##Clock signal
+Net "clk" LOC=V10;

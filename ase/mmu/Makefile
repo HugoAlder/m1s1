@@ -5,14 +5,17 @@ CFLAGS  += -g
 INCDIR  = -Iinclude
 LIBS    = -Llib -lhardware
 
-ALL = bin/test_mmu
+ALL = bin/static_mmu bin/test_mmu
 
 all: $(ALL)
 
 bin/tlb: bin/tlb.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
-bin/test_mmu: bin/test_mmu.o bin/tlb.o
+bin/test_mmu: bin/test_mmu.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+bin/static_mmu: bin/static_mmu.o bin/tlb.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 bin/%.o: src/%.c

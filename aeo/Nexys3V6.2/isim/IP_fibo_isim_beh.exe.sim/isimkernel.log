@@ -1,0 +1,10 @@
+Command line:
+   IP_fibo_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  39873
+
+Wed Nov 22 11:49:54 2017
+
+
+ Elaboration Time: 0.01 sec

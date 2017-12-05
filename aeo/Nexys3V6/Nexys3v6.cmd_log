@@ -1,0 +1,10 @@
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/Nexys3V6/Nexys3v6.xst" -ofn "/home/l3/alder/Documents/AEO/Nexys3V6/Nexys3v6.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/Nexys3V6/Nexys3v6.xst" -ofn "/home/l3/alder/Documents/AEO/Nexys3V6/Nexys3v6.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys3.ucf -p xc6slx16-csg324-3 Nexys3v6.ngc Nexys3v6.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc auto -power off -o Nexys3v6_map.ncd Nexys3v6.ngd Nexys3v6.pcf 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/Nexys3V6/Nexys3v6.xst" -ofn "/home/l3/alder/Documents/AEO/Nexys3V6/Nexys3v6.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys3.ucf -p xc6slx16-csg324-3 Nexys3v6.ngc Nexys3v6.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc auto -power off -o Nexys3v6_map.ncd Nexys3v6.ngd Nexys3v6.pcf 
+par -w -intstyle ise -ol high -mt off Nexys3v6_map.ncd Nexys3v6.ncd Nexys3v6.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Nexys3v6.twx Nexys3v6.ncd -o Nexys3v6.twr Nexys3v6.pcf -ucf Nexys3.ucf 
+bitgen -intstyle ise -f Nexys3v6.ut Nexys3v6.ncd 

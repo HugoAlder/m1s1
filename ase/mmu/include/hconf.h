@@ -1,10 +1,11 @@
 #define HARDWARE_INI "etc/hardware.ini"
+
 #define MMU_IRQ 13
 #define MMU_FAULT_ADDR 0xCD
 #define MMU_CMD 0x66
 
 /* En Ko */
-#define PAGE_SIZE 4
+#define PAGE_SIZE 4096
 
 /* Physical Memory */
 #define PM_PAGES 256

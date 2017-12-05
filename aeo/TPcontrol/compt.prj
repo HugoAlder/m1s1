@@ -1,0 +1,4 @@
+vhdl work "x7seg.vhd"
+vhdl work "compt_inter.vhd"
+vhdl work "clk_div.vhd"
+vhdl work "compt.vhd"

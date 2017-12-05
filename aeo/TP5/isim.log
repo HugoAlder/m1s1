@@ -1,0 +1,46 @@
+ISim log file
+Running: /home/l3/alder/Documents/AEO/TP5/code_isim_beh.exe -gui -tclbatch isim.cmd -wdb /home/l3/alder/Documents/AEO/TP5/code_isim_beh.wdb 
+ISim M.81d (signature 0x9ca8bed6)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# isim force add /code/clk 0 -radix bin -value 1 -radix bin -time 5 ns -repeat 10 ns
+# isim force add /code/clk 0 -radix bin -value 1 -radix bin -time 5 ns -repeat 10 ns
+# isim force add /code/btn 0 -radix bin
+# run all
+Stopped at time : 69794885 ns : File "/home/l3/alder/Documents/AEO/TP5/clk_div.vhd" Line 41
+# isim force add /code/btn 1 -radix bin
+# run all
+Stopped at time : 157774190 ns : File "/home/l3/alder/Documents/AEO/TP5/code.vhd" Line 129
+# run all
+Stopped at time : 563659045 ns : File "/home/l3/alder/Documents/AEO/TP5/clk_div.vhd" Line 36
+# isim force add /code/btn 0 -radix bin
+# isim force add /code/btn 0 -radix bin
+# run all
+Stopped at time : 648292975 ns : File "/home/l3/alder/Documents/AEO/TP5/clk_div.vhd" Line 41
+# run all
+Stopped at time : 708772720 ns : File "/home/l3/alder/Documents/AEO/TP5/code.vhd" Line 129
+# isim force add /code/btn 10 -radix bin
+# isim force add /code/btn 10 -radix bin
+# run all
+Stopped at time : 836508965 ns : File "/home/l3/alder/Documents/AEO/TP5/clk_div.vhd" Line 41
+# isim force add /code/btn 0 -radix bin
+# run all
+Stopped at time : 898949785 ns : File "/home/l3/alder/Documents/AEO/TP5/btn_pulse.vhd" Line 62
+# isim force add /code/btn 100 -radix bin
+# run all
+Stopped at time : 985177880 ns : File "/home/l3/alder/Documents/AEO/TP5/code.vhd" Line 129
+# isim force add /code/btn 0 -radix bin
+# run all
+Stopped at time : 1086234015 ns : File "/home/l3/alder/Documents/AEO/TP5/clk_div.vhd" Line 41
+# isim force add /code/btn 1000 -radix bin
+# run all
+Stopped at time : 1260785135 ns : File "/home/l3/alder/Documents/AEO/TP5/clk_div.vhd" Line 41
+# exit 0

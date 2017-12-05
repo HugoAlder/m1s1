@@ -1,0 +1,235 @@
+Release 12.4 - xst M.81d (lin64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/l3/alder/Documents/AEO/Nexys3V6/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/l3/alder/Documents/AEO/Nexys3V6/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: HMaster.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/timer.vhd" into library work
+Parsing entity <timer>.
+Parsing architecture <xilinx> of entity <timer>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/QDE_1.vhd" into library work
+Parsing entity <QDE_1>.
+Parsing architecture <Behavioral> of entity <qde_1>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Mux4.vhd" into library work
+Parsing entity <Mux4>.
+Parsing architecture <Behavioral> of entity <mux4>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Mux2x32.vhd" into library work
+Parsing entity <mux2x32>.
+Parsing architecture <Behavioral> of entity <mux2x32>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/select_out.vhd" into library work
+Parsing entity <select_out>.
+Parsing architecture <Behavioral> of entity <select_out>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/select_in0_save.vhd" into library work
+Parsing entity <select_in>.
+Parsing architecture <Behavioral> of entity <select_in>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/returnstack.vhd" into library work
+Parsing entity <rstack>.
+Parsing architecture <Behavioral> of entity <rstack>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/regfile.vhf" into library work
+Parsing entity <D4_16E_HXILINX_regfile>.
+Parsing architecture <D4_16E_HXILINX_regfile_V> of entity <d4_16e_hxilinx_regfile>.
+Parsing entity <regfile>.
+Parsing architecture <BEHAVIORAL> of entity <regfile>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/regc.vhd" into library work
+Parsing entity <reg0c>.
+Parsing architecture <reg0c> of entity <reg0c>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/reg1c.vhd" into library work
+Parsing entity <reg1c>.
+Parsing architecture <reg1c> of entity <reg1c>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Ram8.vhd" into library work
+Parsing entity <Ram8>.
+Parsing architecture <rtl> of entity <ram8>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/qde.vhd" into library work
+Parsing entity <QDE>.
+Parsing architecture <QDE> of entity <qde>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/predicat.vhd" into library work
+Parsing entity <predicat>.
+Parsing architecture <Behavioral> of entity <predicat>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/next_count.vhd" into library work
+Parsing entity <next_count>.
+Parsing architecture <Behavioral> of entity <next_count>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Mux2.vhd" into library work
+Parsing entity <Mux2>.
+Parsing architecture <Behavioral> of entity <mux2>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/mem_bank_1bit.vhd" into library work
+Parsing entity <mem_bank_1bit>.
+Parsing architecture <Behavioral> of entity <mem_bank_1bit>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/my_ram.vhd" into library work
+Parsing entity <my_ram>.
+Parsing architecture <my_ram_a> of entity <my_ram>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/incdec.vhd" into library work
+Parsing entity <incdec>.
+Parsing architecture <incdec_a> of entity <incdec>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/addsub.vhd" into library work
+Parsing entity <addsub>.
+Parsing architecture <addsub_a> of entity <addsub>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPcode.vhd" into library work
+Parsing package <IPcodes>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/homade_opcodes.vhd" into library work
+Parsing package <opcodes>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/dstack.vhd" into library work
+Parsing entity <dstack>.
+Parsing architecture <Behavioral> of entity <dstack>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/constant32.vhd" into library work
+Parsing entity <constant32>.
+Parsing architecture <Behavioral> of entity <constant32>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/slavedual_prom.vhd" into library work
+Parsing entity <Inst_mem>.
+Parsing architecture <Behavioral> of entity <inst_mem>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/reset_mem.vhf" into library work
+Parsing entity <reset_mem>.
+Parsing architecture <BEHAVIORAL> of entity <reset_mem>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/random.vhd" into library work
+Parsing entity <random>.
+Parsing architecture <Behavioral> of entity <random>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/QD.vhd" into library work
+Parsing entity <QD>.
+Parsing architecture <QD> of entity <qd>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/pulse.vhf" into library work
+Parsing entity <pulse>.
+Parsing architecture <BEHAVIORAL> of entity <pulse>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Snum.vhd" into library work
+Parsing entity <IP_Snum>.
+Parsing architecture <Behavioral> of entity <ip_snum>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_regfile.vhd" into library work
+Parsing entity <IP_regfile>.
+Parsing architecture <Behavioral> of entity <ip_regfile>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_ram.vhd" into library work
+Parsing entity <IP_ram>.
+Parsing architecture <Behavioral> of entity <ip_ram>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Put.vhd" into library work
+Parsing entity <IP_Put>.
+Parsing architecture <Behavioral> of entity <ip_put>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_datastack.vhd" into library work
+Parsing entity <IP_datastack>.
+Parsing architecture <Behavioral> of entity <ip_datastack>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPTic.vhd" into library work
+Parsing entity <IP_Tic>.
+Parsing architecture <Behavioral> of entity <ip_tic>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPstack.vhd" into library work
+Parsing entity <IP_stack>.
+Parsing architecture <Behavioral> of entity <ip_stack>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPsleep.vhd" into library work
+Parsing entity <IP_sleep>.
+Parsing architecture <Behavioral> of entity <ip_sleep>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPidentity.vhd" into library work
+Parsing entity <IP_identity>.
+Parsing architecture <Behavioral> of entity <ip_identity>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPget.vhd" into library work
+Parsing entity <IP_get>.
+Parsing architecture <Behavioral> of entity <ip_get>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/multiply.vhd" into library work
+Parsing entity <multiply>.
+Parsing architecture <multiply_a> of entity <multiply>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hstack.vhf" into library work
+Parsing entity <Hstack>.
+Parsing architecture <BEHAVIORAL> of entity <hstack>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hcontrolunit.vhd" into library work
+Parsing entity <HCU>.
+Parsing architecture <Behavioral> of entity <hcu>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Funit_lib.vhd" into library work
+Parsing entity <IP_Funit>.
+Parsing architecture <myfunit> of entity <ip_funit>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/add_gen.vhd" into library work
+Parsing entity <add_gen>.
+Parsing architecture <Behavioral> of entity <add_gen>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/square2.vhd" into library work
+Parsing entity <IP_square2>.
+Parsing architecture <Behavioral> of entity <ip_square2>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/reg.vhd" into library work
+Parsing entity <reg0>.
+Parsing architecture <reg0> of entity <reg0>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/netring_master.vhf" into library work
+Parsing entity <netring_master>.
+Parsing architecture <BEHAVIORAL> of entity <netring_master>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/netring.vhf" into library work
+Parsing entity <netring>.
+Parsing architecture <BEHAVIORAL> of entity <netring>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_switch.vhd" into library work
+Parsing entity <IP_switch>.
+Parsing architecture <Behavioral> of entity <ip_switch>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_rdm.vhd" into library work
+Parsing entity <IP_Rdm>.
+Parsing architecture <Behavioral> of entity <ip_rdm>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_MEcom.vhd" into library work
+Parsing entity <IP_MEcom>.
+Parsing architecture <Behavioral> of entity <ip_mecom>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Led.vhd" into library work
+Parsing entity <IP_Led>.
+Parsing architecture <Behavioral> of entity <ip_led>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Com.vhd" into library work
+Parsing entity <IP_Com>.
+Parsing architecture <Behavioral> of entity <ip_com>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Actif.vhd" into library work
+Parsing entity <IP_Actif>.
+Parsing architecture <Behavioral> of entity <ip_actif>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPwaitBT1.vhd" into library work
+Parsing entity <IP_waitbt>.
+Parsing architecture <FSM> of entity <ip_waitbt>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPWait.vhd" into library work
+Parsing entity <IP_delay>.
+Parsing architecture <FSM> of entity <ip_delay>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPBufO.vhd" into library work
+Parsing entity <IP_BufO>.
+Parsing architecture <Behavioral> of entity <ip_bufo>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hsalve.vhd" into library work
+Parsing entity <HSlave>.
+Parsing architecture <Behavioral> of entity <hslave>.
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" into library work
+Parsing entity <HMaster>.
+Parsing architecture <Behavioral> of entity <hmaster>.
+WARNING:HDLCompiler:946 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 565: Actual for formal port e_shift is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 585: Actual for formal port e_shift is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 604: Actual for formal port reset is neither a static name nor a globally static expression
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.40 secs
+ 
+--> 
+
+
+Total memory usage is 312788 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

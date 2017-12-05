@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/l3/alder/Documents/AEO/TP5/code.ncd
+OUTFILE=/home/l3/alder/Documents/AEO/TP5/code.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/l3/alder/Documents/AEO/TP5
+LICENSE=WebPack
+USER_INFO=0_0_579

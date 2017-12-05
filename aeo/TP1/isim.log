@@ -1,0 +1,30 @@
+ISim log file
+Running: /home/m1/seysn/Documents/Hugo/AEO/TP1/add4_isim_beh.exe -gui -tclbatch isim.cmd -wdb /home/m1/seysn/Documents/Hugo/AEO/TP1/add4_isim_beh.wdb 
+ISim M.81d (signature 0x9ca8bed6)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /add4/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+# isim force add /add4/a 2 -radix hex
+# isim force add /add4/a 2 -radix hex
+# isim force add /add4/b f -radix hex
+# isim force add /add4/b f -radix hex
+# run all
+# isim force add /add4/b 5 -radix hex
+# isim force add /add4/b 3 -radix hex
+# isim force add /add4/b 3 -radix hex
+# run all
+# isim force add /add4/a f -radix hex
+# isim force add /add4/a f -radix hex
+# isim force add /add4/b f -radix hex
+# isim force add /add4/b f -radix hex
+# run all
+# run 1.00us
+# exit 0

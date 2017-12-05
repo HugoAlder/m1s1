@@ -1,0 +1,41 @@
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc compt.ngd  
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc compt.ngd  
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc compt.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc compt.ngd  
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc compt.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc compt.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o compt_map.ncd compt.ngd compt.pcf 
+par -w -intstyle ise -ol high -mt off compt_map.ncd compt.ncd compt.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml compt.twx compt.ncd -o compt.twr compt.pcf -ucf compt.ucf 
+bitgen -intstyle ise -f compt.ut compt.ncd 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+xst -intstyle ise -ifn "/home/l3/alder/Documents/AEO/TPcontrol/compt.xst" -ofn "/home/l3/alder/Documents/AEO/TPcontrol/compt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc compt.ucf -p xc6slx16-csg324-3 compt.ngc compt.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o compt_map.ncd compt.ngd compt.pcf 
+par -w -intstyle ise -ol high -mt off compt_map.ncd compt.ncd compt.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml compt.twx compt.ncd -o compt.twr compt.pcf -ucf compt.ucf 
+bitgen -intstyle ise -f compt.ut compt.ncd 

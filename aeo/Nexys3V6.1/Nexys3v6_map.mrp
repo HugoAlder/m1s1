@@ -1,0 +1,696 @@
+Release 12.4 Map M.81d (lin64)
+Xilinx Mapping Report File for Design 'Nexys3v6'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off
+-r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Nexys3v6_map.ncd Nexys3v6.ngd Nexys3v6.pcf 
+Target Device  : xc6slx16
+Target Package : csg324
+Target Speed   : -3
+Mapper Version : spartan6 -- $Revision: 1.52.76.2 $
+Mapped Date    : Wed Nov 15 12:06:45 2017
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   19
+Slice Logic Utilization:
+  Number of Slice Registers:                   610 out of  18,224    3%
+    Number used as Flip Flops:                 608
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                2
+  Number of Slice LUTs:                      3,072 out of   9,112   33%
+    Number used as logic:                    2,829 out of   9,112   31%
+      Number using O6 output only:           1,934
+      Number using O5 output only:             113
+      Number using O5 and O6:                  782
+      Number used as ROM:                        0
+    Number used as Memory:                     207 out of   2,176    9%
+      Number used as Dual Port RAM:            134
+        Number using O6 output only:           128
+        Number using O5 output only:             0
+        Number using O5 and O6:                  6
+      Number used as Single Port RAM:           72
+        Number using O6 output only:            12
+        Number using O5 output only:             4
+        Number using O5 and O6:                 56
+      Number used as Shift Register:             1
+        Number using O6 output only:             1
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:     36
+      Number with same-slice register load:      5
+      Number with same-slice carry load:        19
+      Number with other load:                   12
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,032 out of   2,278   45%
+  Number of LUT Flip Flop pairs used:        3,121
+    Number with an unused Flip Flop:         2,554 out of   3,121   81%
+    Number with an unused LUT:                  49 out of   3,121    1%
+    Number of fully used LUT-FF pairs:         518 out of   3,121   16%
+    Number of unique control sets:             105
+    Number of slice register sites lost
+      to control set restrictions:             499 out of  18,224    2%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        39 out of     232   16%
+    Number of LOCed IOBs:                       39 out of      39  100%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
+    Number used as BUFIO2s:                      1
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
+    Number used as BUFIO2FBs:                    1
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
+    Number used as BUFGs:                        2
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     248    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      32    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                4.69
+
+Peak Memory Usage:  527 MB
+Total REAL time to MAP completion:  18 secs 
+Total CPU time to MAP completion:   18 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR1/Mmux_Y110" and its I1 input driver
+   "my_Master/Stack_Master/ram1/Mram_ram1" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR1/Mmux_Y121" and its I1 input driver
+   "my_Master/Stack_Master/ram1/Mram_ram2" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR1/Mmux_Y231" and its I1 input driver
+   "my_Master/Stack_Master/ram1/Mram_ram3" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR1/Mmux_Y261" and its I1 input driver
+   "my_Master/Stack_Master/ram1/Mram_ram4" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR1/Mmux_Y271" and its I1 input driver
+   "my_Master/Stack_Master/ram1/Mram_ram5" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR1/Mmux_Y281" and its I1 input driver
+   "my_Master/Stack_Master/ram1/Mram_ram6" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR0/Mmux_Y110" and its I1 input driver
+   "my_Master/Stack_Master/ram0/Mram_ram1" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR0/Mmux_Y121" and its I1 input driver
+   "my_Master/Stack_Master/ram0/Mram_ram2" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR0/Mmux_Y231" and its I1 input driver
+   "my_Master/Stack_Master/ram0/Mram_ram3" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR0/Mmux_Y261" and its I1 input driver
+   "my_Master/Stack_Master/ram0/Mram_ram4" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR0/Mmux_Y271" and its I1 input driver
+   "my_Master/Stack_Master/ram0/Mram_ram5" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:Pack:2574 - The F7 multiplexer symbol
+   "my_Master/Stack_Master/muxR0/Mmux_Y281" and its I1 input driver
+   "my_Master/Stack_Master/ram0/Mram_ram6" were implemented suboptimally in the
+   same slice component. The function generator could not be placed directly
+   driving the F7 multiplexer. The design will exhibit suboptimal timing.
+WARNING:PhysDesignRules:367 - The signal <fix_gps_IBUF> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal <pps_gps_IBUF> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal <rx_GPS_IBUF> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal <PS2_Data_IBUF> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal <PS2_Clk_IBUF> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal <my_Master/HCU_Master/Inst_returnstack/Mram_RAM2_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <my_Master/HCU_Master/Inst_returnstack/Mram_RAM1_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:Security:54 - 'xc6slx16' is a WebPack part.
+INFO:LIT:243 - Logical network PS2_Clk_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 70 more times for the
+   following (max. 5 shown):
+   PS2_Data_IBUF,
+   rx_GPS_IBUF,
+   fix_gps_IBUF,
+   pps_gps_IBUF,
+   my_Master/Inst_mem_Master/multi_bank[0].bank/Mram_RAM64bit/SPO
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  90 block(s) removed
+  16 block(s) optimized away
+  86 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "my_Master/Mfunit.Inst_IPFunit/my_incdec/BU2/c_out" is sourceless and
+has been removed.
+The signal "my_Master/Mfunit.Inst_IPFunit/my_addsub/BU2/c_out" is sourceless and
+has been removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<10>"
+is unused and has been removed.
+ Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<10>"
+(MUX) removed.
+  The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<9>" is
+unused and has been removed.
+   Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<9>"
+(MUX) removed.
+    The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<8>" is
+unused and has been removed.
+     Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<8>"
+(MUX) removed.
+      The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<7>" is
+unused and has been removed.
+       Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_cy<7>"
+(MUX) removed.
+The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<11>"
+is unused and has been removed.
+ Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<11>"
+(ROM) removed.
+  The signal "my_Master/HCU_Master/PC_adr<11>" is unused and has been removed.
+   Unused block "my_Master/HCU_Master/PC_adr_11" (SFF) removed.
+    The signal "my_Master/HCU_Master/etat[1]_Startadres[31]_mux_119_OUT<11>" is
+unused and has been removed.
+     Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT169" (ROM)
+removed.
+      The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT161" is
+unused and has been removed.
+       Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT162" (ROM)
+removed.
+        The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT16" is unused
+and has been removed.
+         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT161" (ROM)
+removed.
+          The signal "my_Master/HCU_Master/retbus<11>" is unused and has been removed.
+        The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[31]_mux_44_OUT<11>" is unused
+and has been removed.
+         Unused block
+"my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_xor<11>" (XOR)
+removed.
+      The signal "N735" is unused and has been removed.
+       Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT169_SW0"
+(ROM) removed.
+        The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_49_OUT<11>" is unused
+and has been removed.
+         Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_xor<11>"
+(XOR) removed.
+          The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<10>" is
+unused and has been removed.
+           Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<10>"
+(MUX) removed.
+            The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<9>" is
+unused and has been removed.
+             Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<9>"
+(MUX) removed.
+              The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<8>" is
+unused and has been removed.
+               Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<8>"
+(MUX) removed.
+                The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<7>" is
+unused and has been removed.
+                 Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_cy<7>"
+(MUX) removed.
+        The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT168" is
+unused and has been removed.
+         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT168" (ROM)
+removed.
+          The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT165" is
+unused and has been removed.
+           Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT164" (ROM)
+removed.
+            The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[1]_add_25_OUT<11>" is unused
+and has been removed.
+             Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_xor<11>"
+(XOR) removed.
+              The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<10>" is
+unused and has been removed.
+               Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<10>"
+(MUX) removed.
+                The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<9>" is
+unused and has been removed.
+                 Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<9>"
+(MUX) removed.
+                  The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<8>" is
+unused and has been removed.
+                   Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<8>"
+(MUX) removed.
+                    The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<7>" is
+unused and has been removed.
+                     Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_cy<7>"
+(MUX) removed.
+                    The signal "my_Master/HCU_Master/PC_adr<8>" is unused and has been removed.
+                     Unused block "my_Master/HCU_Master/PC_adr_8" (SFF) removed.
+                      The signal "my_Master/HCU_Master/etat[1]_Startadres[31]_mux_119_OUT<8>" is
+unused and has been removed.
+                       Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1628" (ROM)
+removed.
+                        The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1621" is
+unused and has been removed.
+                         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1622" (ROM)
+removed.
+                          The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT162" is
+unused and has been removed.
+                           Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1621" (ROM)
+removed.
+                            The signal "my_Master/HCU_Master/retbus<8>" is unused and has been removed.
+                          The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[31]_mux_44_OUT<8>" is unused
+and has been removed.
+                           Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_xor<8>"
+(XOR) removed.
+                        The signal "N731" is unused and has been removed.
+                         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1628_SW0"
+(ROM) removed.
+                          The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_49_OUT<8>" is unused
+and has been removed.
+                           Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_xor<8>"
+(XOR) removed.
+                          The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1626" is
+unused and has been removed.
+                           Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1627" (ROM)
+removed.
+                            The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1623" is
+unused and has been removed.
+                             Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1624" (ROM)
+removed.
+                              The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[1]_add_25_OUT<8>" is unused
+and has been removed.
+                               Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_xor<8>"
+(XOR) removed.
+                                The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<8>" is
+unused and has been removed.
+                                 Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<8>"
+(ROM) removed.
+                            The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1625" is
+unused and has been removed.
+                             Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1626" (ROM)
+removed.
+                              The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1624" is
+unused and has been removed.
+                               Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1625" (ROM)
+removed.
+                  The signal "my_Master/HCU_Master/PC_adr<9>" is unused and has been removed.
+                   Unused block "my_Master/HCU_Master/PC_adr_9" (SFF) removed.
+                    The signal "my_Master/HCU_Master/etat[1]_Startadres[31]_mux_119_OUT<9>" is
+unused and has been removed.
+                     Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1648" (ROM)
+removed.
+                      The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1641" is
+unused and has been removed.
+                       Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1642" (ROM)
+removed.
+                        The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT164" is
+unused and has been removed.
+                         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1641" (ROM)
+removed.
+                          The signal "my_Master/HCU_Master/retbus<9>" is unused and has been removed.
+                        The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[31]_mux_44_OUT<9>" is unused
+and has been removed.
+                         Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_xor<9>"
+(XOR) removed.
+                      The signal "N729" is unused and has been removed.
+                       Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1648_SW0"
+(ROM) removed.
+                        The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_49_OUT<9>" is unused
+and has been removed.
+                         Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_xor<9>"
+(XOR) removed.
+                        The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1646" is
+unused and has been removed.
+                         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1647" (ROM)
+removed.
+                          The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1643" is
+unused and has been removed.
+                           Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1644" (ROM)
+removed.
+                            The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[1]_add_25_OUT<9>" is unused
+and has been removed.
+                             Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_xor<9>"
+(XOR) removed.
+                              The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<9>" is
+unused and has been removed.
+                               Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<9>"
+(ROM) removed.
+                          The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1645" is
+unused and has been removed.
+                           Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1646" (ROM)
+removed.
+                            The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1644" is
+unused and has been removed.
+                             Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT1645" (ROM)
+removed.
+                The signal "my_Master/HCU_Master/PC_adr<10>" is unused and has been removed.
+                 Unused block "my_Master/HCU_Master/PC_adr_10" (SFF) removed.
+                  The signal "my_Master/HCU_Master/etat[1]_Startadres[31]_mux_119_OUT<10>" is
+unused and has been removed.
+                   Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT148" (ROM)
+removed.
+                    The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT141" is
+unused and has been removed.
+                     Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT142" (ROM)
+removed.
+                      The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT14" is unused
+and has been removed.
+                       Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT141" (ROM)
+removed.
+                        The signal "my_Master/HCU_Master/retbus<10>" is unused and has been removed.
+                      The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[31]_mux_44_OUT<10>" is unused
+and has been removed.
+                       Unused block
+"my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[31]_mux_44_OUT_xor<10>" (XOR)
+removed.
+                    The signal "N741" is unused and has been removed.
+                     Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT148_SW0"
+(ROM) removed.
+                      The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_49_OUT<10>" is unused
+and has been removed.
+                       Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_49_OUT_xor<10>"
+(XOR) removed.
+                      The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT147" is
+unused and has been removed.
+                       Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT147" (ROM)
+removed.
+                        The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT143" is
+unused and has been removed.
+                         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT144" (ROM)
+removed.
+                          The signal "my_Master/HCU_Master/PC_adr[31]_PC_adr[1]_add_25_OUT<10>" is unused
+and has been removed.
+                           Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_xor<10>"
+(XOR) removed.
+                            The signal "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<10>"
+is unused and has been removed.
+                             Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_PC_adr[1]_add_25_OUT_lut<10>"
+(ROM) removed.
+                        The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT145" is
+unused and has been removed.
+                         Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT146" (ROM)
+removed.
+                          The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT144" is
+unused and has been removed.
+                           Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT145" (ROM)
+removed.
+          The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT167" is
+unused and has been removed.
+           Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT166" (ROM)
+removed.
+            The signal "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT166" is
+unused and has been removed.
+             Unused block "my_Master/HCU_Master/Mmux_PWR_32_o_PC_adr[1]_mux_82_OUT165" (ROM)
+removed.
+The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<10>" is
+unused and has been removed.
+ Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<10>"
+(MUX) removed.
+  The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<9>" is
+unused and has been removed.
+   Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<9>"
+(MUX) removed.
+    The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<8>" is
+unused and has been removed.
+     Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<8>"
+(MUX) removed.
+      The signal "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<7>" is
+unused and has been removed.
+       Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_cy<7>"
+(MUX) removed.
+The signal "my_Master/HCU_Master/PC_adr[31]_PC_ret[31]_mux_84_OUT<8>" is unused
+and has been removed.
+ Unused block "my_Master/HCU_Master/Mmux_PC_adr[31]_PC_ret[31]_mux_84_OUT311"
+(ROM) removed.
+  The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_20_OUT<8>" is unused
+and has been removed.
+   Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_xor<8>"
+(XOR) removed.
+The signal "my_Master/HCU_Master/PC_adr[31]_PC_ret[31]_mux_84_OUT<9>" is unused
+and has been removed.
+ Unused block "my_Master/HCU_Master/Mmux_PC_adr[31]_PC_ret[31]_mux_84_OUT321"
+(ROM) removed.
+  The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_20_OUT<9>" is unused
+and has been removed.
+   Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_xor<9>"
+(XOR) removed.
+The signal "my_Master/HCU_Master/PC_adr[31]_PC_ret[31]_mux_84_OUT<10>" is unused
+and has been removed.
+ Unused block "my_Master/HCU_Master/Mmux_PC_adr[31]_PC_ret[31]_mux_84_OUT21"
+(ROM) removed.
+  The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_20_OUT<10>" is unused
+and has been removed.
+   Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_xor<10>"
+(XOR) removed.
+The signal "my_Master/HCU_Master/PC_adr[31]_PC_ret[31]_mux_84_OUT<11>" is unused
+and has been removed.
+ Unused block "my_Master/HCU_Master/Mmux_PC_adr[31]_PC_ret[31]_mux_84_OUT33"
+(ROM) removed.
+  The signal "my_Master/HCU_Master/PC_adr[31]_GND_33_o_add_20_OUT<11>" is unused
+and has been removed.
+   Unused block "my_Master/HCU_Master/Madd_PC_adr[31]_GND_33_o_add_20_OUT_xor<11>"
+(XOR) removed.
+The signal "my_Master/HCU_Master/PC_ret<8>" is unused and has been removed.
+ Unused block "my_Master/HCU_Master/PC_ret_8" (FF) removed.
+The signal "my_Master/HCU_Master/PC_ret<9>" is unused and has been removed.
+ Unused block "my_Master/HCU_Master/PC_ret_9" (FF) removed.
+The signal "my_Master/HCU_Master/PC_ret<10>" is unused and has been removed.
+ Unused block "my_Master/HCU_Master/PC_ret_10" (FF) removed.
+The signal "my_Master/HCU_Master/PC_ret<11>" is unused and has been removed.
+ Unused block "my_Master/HCU_Master/PC_ret_11" (FF) removed.
+Unused block "my_Master/Mfunit.Inst_IPFunit/my_addsub/BU2/XST_GND" (ZERO)
+removed.
+Unused block "my_Master/Mfunit.Inst_IPFunit/my_addsub/GND" (ZERO) removed.
+Unused block "my_Master/Mfunit.Inst_IPFunit/my_addsub/VCC" (ONE) removed.
+Unused block "my_Master/Mfunit.Inst_IPFunit/my_incdec/BU2/XST_GND" (ZERO)
+removed.
+Unused block "my_Master/Mfunit.Inst_IPFunit/my_incdec/GND" (ZERO) removed.
+Unused block "my_Master/Mfunit.Inst_IPFunit/my_incdec/VCC" (ONE) removed.
+Unused block "my_Master/Msquare2.Inst_IP_square2/mul1/blk00000001" (ONE)
+removed.
+Unused block "my_Master/Msquare2.Inst_IP_square2/mul1/blk00000002" (ZERO)
+removed.
+Unused block "my_Master/Msquare2.Inst_IP_square2/mul2/blk00000001" (ONE)
+removed.
+Unused block "my_Master/Msquare2.Inst_IP_square2/mul2/blk00000002" (ZERO)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		My_E190/XLXI_1/XST_GND
+VCC 		My_E190/XLXI_1/XST_VCC
+VCC 		My_E190/XLXI_2
+GND 		XST_GND
+GND 		my_Master/Msquare2.Inst_IP_square2/mul1/blk00000003/blk00000004
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul1/blk00000003/blk00000329
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul1/blk00000003/blk00000380
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul1/blk00000003/blk00000391
+GND 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk00000004
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk00000329
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk0000033a
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk0000034b
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk0000034d
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk0000035e
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk0000036f
+LUT4 		my_Master/Msquare2.Inst_IP_square2/mul2/blk00000003/blk00000380
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| PS2_Clk                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| PS2_Data                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| a_to_g<0>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| a_to_g<1>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| a_to_g<2>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| a_to_g<3>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| a_to_g<4>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| a_to_g<5>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| a_to_g<6>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| an<0>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| an<1>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| an<2>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| an<3>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| btn<0>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| btn<1>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| btn<2>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| btn<3>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| btn<4>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| fix_gps                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| led<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| mclk                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| pps_gps                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| rx_GPS                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| rx_in                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sw<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

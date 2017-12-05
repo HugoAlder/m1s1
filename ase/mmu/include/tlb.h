@@ -1,5 +1,4 @@
 static int current_process;
-static int virtualaddr = 0;
 
 struct entry_s {
   unsigned int RFU : 8;
@@ -12,4 +11,3 @@ struct entry_s {
 };
 
 int ppage_of_vpage(int process, int vpage);
-void mmuhandler();

@@ -1,0 +1,15 @@
+# Output products list for <multiply>
+_xmsgs\pn_parser.xmsgs
+multiply.asy
+multiply.gise
+multiply.ngc
+multiply.sym
+multiply.v
+multiply.veo
+multiply.vhd
+multiply.vho
+multiply.xco
+multiply.xise
+multiply_flist.txt
+multiply_readme.txt
+multiply_xmdf.tcl

@@ -1,0 +1,38 @@
+Release 12.4 - par M.81d (lin64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Wed Nov 29 10:08:49 2017
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 26 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   PS2_Clk_IBUF
+   PS2_Data_IBUF
+   fix_gps_IBUF
+   my_Master/HCU_Master/Inst_returnstack/Mram_RAM1_RAMD_D1_O
+   my_Master/HCU_Master/Inst_returnstack/Mram_RAM2_RAMD_D1_O
+   my_Master/Mdatastack.Inst_IPdataStack/Inst_datastack/Mram_RAM1_RAMD_D1_O
+   my_Master/Mdatastack.Inst_IPdataStack/Inst_datastack/Mram_RAM2_RAMD_D1_O
+   my_Master/Mdatastack.Inst_IPdataStack/Inst_datastack/Mram_RAM3_RAMD_D1_O
+   my_Master/Mdatastack.Inst_IPdataStack/Inst_datastack/Mram_RAM4_RAMD_D1_O
+   my_Master/Mdatastack.Inst_IPdataStack/Inst_datastack/Mram_RAM5_RAMD_D1_O
+   my_Master/Xslaves[0].Yslaves[0].One_salve/HCU_Slave/Inst_returnstack/Mram_RAM1_RAMD_D1_O
+   my_Master/Xslaves[0].Yslaves[0].One_salve/HCU_Slave/Inst_returnstack/Mram_RAM2_RAMD_D1_O
+   my_Master/Xslaves[0].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM1_RAMD_D1_O
+   my_Master/Xslaves[0].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM2_RAMD_D1_O
+   my_Master/Xslaves[0].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM3_RAMD_D1_O
+   my_Master/Xslaves[0].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM4_RAMD_D1_O
+   my_Master/Xslaves[0].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM5_RAMD_D1_O
+   my_Master/Xslaves[1].Yslaves[0].One_salve/HCU_Slave/Inst_returnstack/Mram_RAM1_RAMD_D1_O
+   my_Master/Xslaves[1].Yslaves[0].One_salve/HCU_Slave/Inst_returnstack/Mram_RAM2_RAMD_D1_O
+   my_Master/Xslaves[1].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM1_RAMD_D1_O
+   my_Master/Xslaves[1].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM2_RAMD_D1_O
+   my_Master/Xslaves[1].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM3_RAMD_D1_O
+   my_Master/Xslaves[1].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM4_RAMD_D1_O
+   my_Master/Xslaves[1].Yslaves[0].One_salve/SDataStack.Inst_IPdataStack/Inst_datastack/Mram_RAM5_RAMD_D1_O
+   pps_gps_IBUF
+   rx_GPS_IBUF
+
+

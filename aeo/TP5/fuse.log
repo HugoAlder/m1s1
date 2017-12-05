@@ -1,0 +1,26 @@
+Running: /opt/Xilinx/12.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/l3/alder/Documents/AEO/TP5/code_isim_beh.exe -prj /home/l3/alder/Documents/AEO/TP5/code_beh.prj work.code 
+ISim M.81d (signature 0x9ca8bed6)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/l3/alder/Documents/AEO/TP5/clk_div.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/TP5/btn_pulse.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/TP5/code.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 74132 KB
+Fuse CPU Usage: 60 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Compiling architecture clkdiv of entity clkdiv [clkdiv_default]
+Compiling architecture behavioral of entity btn_pulse [btn_pulse_default]
+Compiling architecture behavioral of entity code
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 9 VHDL Units
+Built simulation executable /home/l3/alder/Documents/AEO/TP5/code_isim_beh.exe
+Fuse Memory Usage: 635300 KB
+Fuse CPU Usage: 80 ms
+GCC CPU Usage: 140 ms

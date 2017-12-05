@@ -1,0 +1,2 @@
+vhdl work "clk_div.vhd"
+vhdl work "pingpong.vhd"

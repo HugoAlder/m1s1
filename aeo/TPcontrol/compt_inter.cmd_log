@@ -1,0 +1,4 @@
+vhdtdtfi -lib work compt_inter.vhd -prj display -o compt_inter.spl -module compt_inter -template /opt/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -prj display -o /home/l3/alder/Documents/AEO/TPcontrol/compt_inter.vhi -lib work /home/l3/alder/Documents/AEO/TPcontrol//compt_inter.vhd -module compt_inter -template /opt/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -prj display -o /home/l3/alder/Documents/AEO/TPcontrol/compt_inter.vhi -lib work /home/l3/alder/Documents/AEO/TPcontrol//compt_inter.vhd -module compt_inter -template /opt/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -prj display -o /home/l3/alder/Documents/AEO/TPcontrol/compt_inter.vhi -lib work /home/l3/alder/Documents/AEO/TPcontrol//compt_inter.vhd -module compt_inter -template /opt/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 

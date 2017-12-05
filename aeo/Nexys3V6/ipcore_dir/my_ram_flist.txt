@@ -1,0 +1,17 @@
+# Output products list for <my_ram>
+_xmsgs\pn_parser.xmsgs
+dist_mem_gen_ds322.pdf
+dist_mem_gen_readme.txt
+my_ram.asy
+my_ram.gise
+my_ram.ngc
+my_ram.sym
+my_ram.v
+my_ram.veo
+my_ram.vhd
+my_ram.vho
+my_ram.xco
+my_ram.xise
+my_ram_flist.txt
+my_ram_readme.txt
+my_ram_xmdf.tcl

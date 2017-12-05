@@ -1,0 +1,21 @@
+Ex 1
+
+entity ENT is 
+   	port(a : in std_logic (4 downto 0); 
+    	     s : out std_logic (2 downto 0); 
+end ENT;
+ 
+architecture FLOT_ENT of ENT is 
+begin 
+	with a select
+	s <= "101" when "01001",
+	     "011" when "10010",
+	     "001" when "10011",
+	     "001" when "10100",
+	     "001" when "10101",
+	     "001" when "10110"
+end FLOT_ENT;
+
+Ex 2
+
+1. 

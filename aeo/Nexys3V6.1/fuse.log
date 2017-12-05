@@ -1,0 +1,153 @@
+Running: /opt/Xilinx/12.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/l3/alder/Documents/AEO/Nexys3V6/masterbench_isim_beh.exe -prj /home/l3/alder/Documents/AEO/Nexys3V6/masterbench_beh.prj work.masterbench 
+ISim M.81d (signature 0x9ca8bed6)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/timer.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/QDE_1.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Mux4.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Mux2x32.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/select_out.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/select_in0_save.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/returnstack.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/regfile.vhf" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/regc.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/reg1c.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Ram8.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/qde.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/predicat.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/next_count.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Mux2.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/mem_bank_1bit.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/my_ram.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/multiply.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/incdec.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/ipcore_dir/addsub.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPcode.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/homade_opcodes.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/dstack.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/constant32.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/slavedual_prom.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/reset_mem.vhf" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/random.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/QD.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/pulse.vhf" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Snum.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_regfile.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_ram.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Put.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_datastack.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPTic.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPstack.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPsleep.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPmul16.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPidentity.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPget.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hstack.vhf" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hcontrolunit.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Funit_lib.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/add_gen.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/reg.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/netring_master.vhf" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/netring.vhf" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_switch.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_rdm.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_MEcom.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Led.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Com.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IP_Actif.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPwaitBT1.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPWait.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/IPBufO.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hsalve.vhd" into library work
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" into library work
+WARNING:HDLCompiler:946 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 556: Actual for formal port e_shift is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 576: Actual for formal port e_shift is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 595: Actual for formal port reset is neither a static name nor a globally static expression
+Parsing VHDL file "/home/l3/alder/Documents/AEO/Nexys3V6/Master_tb.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:746 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 90: Range is empty (null range)
+WARNING:HDLCompiler:746 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 92: Range is empty (null range)
+WARNING:HDLCompiler:746 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 95: Range is empty (null range)
+WARNING:HDLCompiler:746 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 450: Range is empty (null range)
+WARNING:HDLCompiler:746 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 489: Range is empty (null range)
+WARNING:HDLCompiler:746 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 515: Range is empty (null range)
+WARNING:HDLCompiler:746 - "/home/l3/alder/Documents/AEO/Nexys3V6/Hmaster.vhd" Line 541: Range is empty (null range)
+Completed static elaboration
+Fuse Memory Usage: 94328 KB
+Fuse CPU Usage: 510 ms
+Using precompiled package standard from library std
+Using precompiled package textio from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Using precompiled package std_logic_signed from library ieee
+Using precompiled package numeric_std from library ieee
+Compiling package ipcodes
+Compiling package vcomponents
+Compiling package opcodes
+Compiling architecture behavioral of entity mem_bank_1bit [mem_bank_1bit_default]
+Compiling architecture behavioral of entity inst_mem [inst_mem_default]
+Compiling architecture behavioral of entity add_gen [add_gen_default]
+Compiling architecture fd_v of entity fd [\FD('0')\]
+Compiling architecture inv_v of entity inv [inv_default]
+Compiling architecture and2_v of entity and2 [and2_default]
+Compiling architecture behavioral of entity reset_mem [reset_mem_default]
+Compiling architecture behavioral of entity constant32 [constant32_default]
+Compiling architecture behavioral of entity mux4 [mux4_default]
+Compiling architecture behavioral of entity mux2 [mux2_default]
+Compiling architecture behavioral of entity predicat [predicat_default]
+Compiling architecture rtl of entity ram8 [ram8_default]
+Compiling architecture qde of entity qde [\QDE(32)\]
+Compiling architecture behavioral of entity select_in [select_in_default]
+Compiling architecture behavioral of entity select_out [select_out_default]
+Compiling architecture behavioral of entity next_count [next_count_default]
+Compiling architecture or3_v of entity or3 [or3_default]
+Compiling architecture or2_v of entity or2 [or2_default]
+Compiling architecture behavioral of entity hstack [hstack_default]
+Compiling architecture behavioral of entity rstack [rstack_default]
+Compiling architecture behavioral of entity hcu [hcu_default]
+Compiling architecture reg0 of entity reg0 [\reg0(16)\]
+Compiling architecture reg0 of entity reg0 [\reg0(8)\]
+Compiling architecture reg0c of entity reg0c [\reg0c(8)\]
+Compiling architecture behavioral of entity ip_led [\IP_Led(('0','0','0','0','0','0'...]
+Compiling architecture behavioral of entity ip_switch [\IP_switch(('0','0','0','0','0',...]
+Compiling architecture behavioral of entity ip_bufo [\IP_BufO(('0','0','0','0','0','0...]
+Compiling architecture and3_v of entity and3 [and3_default]
+Compiling architecture behavioral of entity pulse [pulse_default]
+Compiling architecture reg1c of entity reg1c [\reg1c(5)\]
+Compiling architecture fsm of entity ip_waitbt [\IP_waitbt(('1','0','0','0','0',...]
+Compiling architecture fsm of entity ip_delay [\IP_delay(('1','0','0','0','0','...]
+Compiling package xbip_addsub_v2_0_comp
+Compiling package bip_utils_pkg_v2_0
+Compiling package bip_usecase_utils_pkg_v2_0
+Compiling package c_addsub_pkg_v11_0
+Compiling package xbip_pipe_v2_0_xst_comp
+Compiling package c_reg_fd_v11_0_comp
+Compiling architecture behavioral of entity c_reg_fd_v11_0 [\c_reg_fd_v11_0(32,"0","0",1,0,0...]
+Compiling architecture behavioral of entity c_addsub_v11_0_legacy [\c_addsub_v11_0_legacy(32,32,32,...]
+Compiling architecture behavioral of entity c_addsub_v11_0 [\c_addsub_v11_0(0,"spartan6",0,3...]
+Compiling architecture incdec_a of entity incdec [incdec_default]
+Compiling architecture behavioral of entity c_addsub_v11_0_legacy [\c_addsub_v11_0_legacy(32,32,32,...]
+Compiling architecture behavioral of entity c_addsub_v11_0 [\c_addsub_v11_0(0,"spartan6",0,3...]
+Compiling architecture addsub_a of entity addsub [addsub_default]
+Compiling architecture myfunit of entity ip_funit [\IP_Funit(('0','0','0','0','0','...]
+Compiling architecture behavioral of entity ip_stack [\IP_stack(('0','0','0','0','0','...]
+Compiling architecture behavioral of entity ip_identity [\IP_identity(('0','0','0','0','0...]
+Compiling architecture reg1c of entity reg1c [\reg1c(32)\]
+Compiling architecture behavioral of entity ip_tic [\IP_Tic(('0','0','0','0','0','0'...]
+Compiling architecture behavioral of entity random [\random(32)\]
+Compiling architecture behavioral of entity ip_rdm [\IP_Rdm(('0','0','0','0','0','0'...]
+Compiling package mult_gen_pkg_v11_2
+Compiling architecture behavioral of entity mult_gen_v11_2 [\mult_gen_v11_2(0,0,"spartan6",1...]
+Compiling architecture multiply_a of entity multiply [multiply_default]
+Compiling architecture behavioral of entity ip_mul16 [\IP_mul16(('0','0','0','0','0','...]
+Compiling architecture behavioral of entity hmaster [hmaster_default]
+Compiling architecture behavior of entity masterbench
+Time Resolution for simulation is 1ps.
+Waiting for 15 sub-compilation(s) to finish...
+Compiled 118 VHDL Units
+Built simulation executable /home/l3/alder/Documents/AEO/Nexys3V6/masterbench_isim_beh.exe
+Fuse Memory Usage: 682556 KB
+Fuse CPU Usage: 850 ms
+GCC CPU Usage: 3710 ms

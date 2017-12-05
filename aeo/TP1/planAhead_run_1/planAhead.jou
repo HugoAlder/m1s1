@@ -1,0 +1,9 @@
+#-----------------------------------------------------------
+# PlanAhead v12.4
+# Build 108585 by hdbuild on Tue Nov  9 16:43:51 PST 2010
+# Start of session at: Wed Sep 13 11:41:10 2017
+# Process ID: 31563
+# Log file: /home/m1/seysn/Documents/Hugo/AEO/TP1/planAhead_run_1/planAhead.log
+# Journal file: /home/m1/seysn/Documents/Hugo/AEO/TP1/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui -source /home/m1/seysn/Documents/Hugo/AEO/TP1/pa.fromNetlist.tcl
