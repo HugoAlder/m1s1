@@ -1,14 +1,21 @@
 #include <rflpc17xx/rflpc17xx.h>
+#include "i2c.h"
 
-#include "pins.h"
+/* #include "pins.h" */
 #include "generators.h"
 #include "timers.h"
 #include "channels.h"
 
-#define RMT ADC0
+#define RMT RFLPC_I2C_PORT2
 
-static int button = 3;
-static int i = 0;
+static int cpt = 0;
+static uint16_t i;
+
+void sleep(uint32_t ms) {
+  uint32_t delay, counter;
+  for (delay = (16000 * ms), counter = 0; counter < delay; ++counter)
+    asm("");
+}
 
 /*
 <generator>
@@ -22,9 +29,28 @@ static char doGet(struct args_t *args) {
 }
 
 static char trigger_remote(struct args_t *args) {
-  if(rflpc_gpio_get_pin(RMT) == 0) {
-    i++;
+
+  uint8_t ir_sensor_addr = 0x90;
+  uint8_t status;
+
+  /* Init i2c mode */
+  if(rflpc_i2c_init(RMT, RFLPC_I2C_MODE_MASTER, 0) == -1) {
+    return 0;
   }
+
+  /* Reading value and putting it in i by getting MSB from rflpc_i2c_read*/
+  i = rflpc_i2c_read(RMT, ir_sensor_addr, &cpt, 1, 1);
+  /* Checking the status of rflpc_i2c_read */
+  status = (i & FF00) >> 8;
+  if(status == RFLPC_I2C_SLAVE_TRANSMITTED_DATA) {
+    /* LED control */
+    rflpc_led_binary_value(cpt);
+    cpt++;
+    if(cpt > 15)
+      cpt = 0;
+  }
+
+  /* Sending the value of i */
   out_uint(i);
   server_push(&remote_used);
   return 1;

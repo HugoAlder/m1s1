@@ -235,7 +235,7 @@ for target in targets:
 	# export variables for external SConscript files
 	Export('env libFileName elfFileName binDir coreDir driversDir genDir appBase toolsList chuncksNbits sourcesMap gzipped test')
 	Export('env targetDir binDir projectName elfName')
-	Export('dirsMap sourcesMap target sconsBasePath httpCodesDir tmpBase')
+	Export('dirsMap sourcesMap target sconsBasePath httpCodesDir tmpBase targetBase')
 	# target dependent SConscript call
 	SConscript(os.path.join(targetDir,'SConscript'),variant_dir = binDir,duplicate = 0)
 	# possible web applications SConscript calls
