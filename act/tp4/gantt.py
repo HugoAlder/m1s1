@@ -67,7 +67,7 @@ if __name__ == "__main__":
                 print("Task {} starts at t={}, which is before its arrival date ({})".format(i, D[i], A[i]))
                 sys.exit(1)
             if SIZE[i] > n_idle:
-                print("Task {} scheduled at t={} and requires {} machines, but only {} are available".format(i, D[i], SIZE[i], idle))
+                print("Task {} scheduled at t={} and requires {} machines, but only {} are available".format(i, D[i], SIZE[i], n_idle))
                 sys.exit(1)
             n_idle -= SIZE[i]
             R[i] = []
