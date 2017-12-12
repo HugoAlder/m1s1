@@ -39,13 +39,10 @@ def best_pos(job, last_pos):
 
     # We search for the min position that has enough machines space
     for el in list(size):
-        print("el {}".format(el))
         nmach = 0
         for e in list(size):
             if e < el:
                 nmach += size[e]
-        print('nmach {}'.format(nmach))
-        print('job.arrival {}'.format(job.arrival))
         if (nmach >= job.nb_machines) and job.arrival <= last_pos[last_pos.index(el)]:
             if el not in res : res.append(el)
 
@@ -89,7 +86,7 @@ def idx_less_or_eq(arr, val, machines):
         if arr[i] <= val and i not in machines:
             return i
 
-# Retourne tous les trous (blanks) compatibles à l'insertion d'un job en fonction de la durée
+# Retourne tous les trous (blanks) compatibles à l'insertion d'un job en fonction de la durée et de sa date d'arrivee
 def blank_length_ok(blanks, job, nb_machines):
     res = []
     for blank in blanks:
@@ -118,11 +115,11 @@ def suitable_machines(blanks, job, nb_machines):
 def schedule(nb_machines, jobs):
     res = []
     last_pos = [0 for i in range(nb_machines)]
-    
+
     # Tableau de tous les blanks dans l'ordonnancement
     blanks = []
 
-    for job in sort_by(jobs, "arrival"):
+    for job in sort_by(jobs, "length"):
 
         # D'abord verifier si on peut combler un trou
         sm = suitable_machines(blanks, job, nb_machines)
@@ -155,8 +152,6 @@ if __name__ == '__main__':
         sys.exit()
     nb_machine, nb_jobs, data = get_data(sys.argv[1])
 
-    #tmp = sort_by(data, "length")
-    #tmp2 = sort_by(tmp, "nb_machines")
     jobs = sort_by(schedule(nb_machine, data), "id")
 
     for job in jobs:

@@ -31,7 +31,7 @@ static void switch_to_process1(void) {
     _out(MMU_CMD, MMU_RESET);
 }
 
-static void mmuhandler() {
+void mmuhandler() {
   struct entry_s e;
   int faultaddr = _in(MMU_FAULT_ADDR);
   if(faultaddr < (int) virtual_memory || faultaddr > (int) virtual_memory + VM_SIZE - 1) {
