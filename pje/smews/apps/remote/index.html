@@ -15,10 +15,10 @@
 <script type="text/javascript">
   function youpi() {
     $.get(
-      "remote",
+      "i2c",
       {},
       function(data) {
-        $("#youpi").text(data);
+        $("#youpi").text($("#youpi").text() + " " + (parseInt(data, 10)).toString(16));
         youpi();
       }
     );
