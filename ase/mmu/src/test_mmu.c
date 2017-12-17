@@ -36,10 +36,10 @@ int init() {
   return 0;
 }
 
+/* Doit renvoyer une tentative d'accés illégal */
 int main() {
-  int * adr;
+  int * adr = 0;
   init();
-  adr = (char *) 0;
-  *adr = 'c';
+  *adr = 1;
   return 0;
 }

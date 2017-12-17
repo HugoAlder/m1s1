@@ -8,6 +8,8 @@
 
 #define N 256
 
+static int current_process;
+
 void empty_it() {
     return;
 }
@@ -71,6 +73,7 @@ int init() {
   return 0;
 }
 
+/* Doit indiquer 2 valeurs différentes */
 int main() {
 
   void *ptr;

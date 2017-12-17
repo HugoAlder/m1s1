@@ -18,13 +18,13 @@ bin/swap: bin/swap.o
 bin/matrix: bin/matrix.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
-bin/user_process: bin/user_process.o
-	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
-
 bin/test_mmu: bin/test_mmu.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 bin/static_mmu: bin/static_mmu.o bin/tlb.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+bin/user_process: bin/user_process.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 bin/mmu_manager: bin/mmu_manager.o bin/user_process.o bin/swap.o bin/tlb.o bin/matrix.o

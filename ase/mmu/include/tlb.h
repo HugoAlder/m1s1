@@ -1,5 +1,3 @@
-static int current_process;
-
 struct entry_s {
   unsigned int RFU : 8;
   unsigned int vpage : 12;

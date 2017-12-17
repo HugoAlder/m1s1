@@ -8,7 +8,7 @@
 
 static FILE *swap_file = NULL;
 
-static int
+int
 init_swap(void)
 {
     swap_file = fopen(".swap_file", "w+"); /* w+: create, read, write*/
