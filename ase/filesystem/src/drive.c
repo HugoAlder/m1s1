@@ -28,7 +28,7 @@ void read_sector(unsigned int cyl, unsigned int sec, unsigned char * buffer) {
   }
 }
 
-void read_sector_n(unsigned int cyl, unsigned int sec, unsigned int n, unsigned char * buffer) {
+void read_sector_n(unsigned int cyl, unsigned int sec, unsigned char * buffer, unsigned int n) {
   int i;
 
   assert(cyl <= NB_CYL);
@@ -73,7 +73,7 @@ void write_sector(unsigned int cyl, unsigned int sec, unsigned char * buffer) {
   _sleep(14);
 }
 
-void write_sector_n(unsigned int cyl, unsigned int sec, unsigned int n, unsigned char * buffer) {
+void write_sector_n(unsigned int cyl, unsigned int sec, unsigned char * buffer, unsigned int n) {
   int i;
 
   assert(cyl <= NB_CYL);

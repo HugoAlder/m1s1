@@ -1,7 +1,7 @@
 #ifndef VOL_H
 #define VOL_H
 
-#define MAGIC_SB   0x314159
+#define MAGIC_SB   0x445566
 #define BLOCK_NULL 0
 
 enum vol_type { BASE, ANNEXE, OTHER };
@@ -28,6 +28,6 @@ void init_super(int vol, int serial, char * name);
 void save_super();
 int new_block();
 void free_block(unsigned int block);
-void format_vol(unsigned int vol);
+void format_block(unsigned int vol, unsigned int nblock);
 
 #endif

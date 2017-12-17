@@ -1,8 +1,8 @@
 #include "hconf.h"
 
+#define MAGIC_INODE 0x998877
 #define NB_DIRECT ((SECTOR_SIZE - sizeof(int) * 4 - sizeof(enum file_type_e)) / sizeof(int))
 #define NB_INDIRECT (SECTOR_SIZE / sizeof(int))
-#define MAGIC_INODE 0x12345678
 
 enum file_type_e { FILE_FILE, FILE_DIRECTORY };
 

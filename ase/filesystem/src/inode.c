@@ -38,22 +38,32 @@ unsigned int create_inode(enum file_type_e type) {
 }
 
 int delete_inode(unsigned int inumber) {
-  int i;
   struct inode_s inode;
+  unsigned int t[NB_INDIRECT];
+  int i;
 
   read_inode(inumber, &inode);
 
-  for(i = 0; i < NB_INDIRECT; i++) {
-    if(inode.direct[i] != BLOCK_NULL) {
+  for (i = 0; i < NB_DIRECT; i++) {
+    if (inode.direct[i] != BLOCK_NULL) {
       free_block(inode.direct[i]);
     }
   }
 
   free_indirect(inode.indirect);
 
-  /* TO DO */
-  return 0;
+  if (inode.indirect2) {
+    read_block_n(current_vol, inode.indirect2, (unsigned char*) &t, sizeof(t));
+    for (i = 0; i < NB_INDIRECT; i++) {
+      free_indirect(t[i]);
+    }
+    free_block(inode.indirect2);
+  }
+  free_block(inumber);
+
+  return inumber;
 }
+
 
 void free_indirect(unsigned int indirect) {
   int i;
@@ -72,45 +82,42 @@ void free_indirect(unsigned int indirect) {
   free_block(indirect);
 }
 
-unsigned int vblock_of_fblock(unsigned int inumber, unsigned int fblock, int do_allocate) {
-  struct inode_s inode;
-  unsigned int t[NB_INDIRECT];
-  int index1, index2;
+unsigned int vblock_of_fblock(unsigned int inumber, unsigned int fbloc, int do_allocate) {
+    struct inode_s inode;
+    unsigned int t[NB_INDIRECT];
+    int index2, index1;
 
-  read_inode(inumber, &inode);
-  if (fblock < NB_DIRECT) {
-    return inode.direct[fblock];
-  }
+    read_inode(inumber, &inode);
+    if (fbloc < NB_DIRECT) {
+        if (do_allocate && inode.direct[fbloc] == BLOCK_NULL) {
+            inode.direct[fbloc] = new_block();
+            format_block(current_vol, inode.direct[fbloc]);
+            write_inode(inumber, &inode);
+        }
 
-  fblock -= NB_INDIRECT;
-
-  if (fblock < NB_INDIRECT) {
-    if (inode.indirect == BLOCK_NULL) {
-      return BLOCK_NULL;
+        return inode.direct[fbloc];
     }
-    read_block(current_vol, inode.indirect, (unsigned char *) t);
-    return t[fblock];
-  }
 
-  fblock -= NB_INDIRECT;
+    fbloc -= NB_DIRECT;
+    if (fbloc < NB_INDIRECT) {
+        /* TODO: do_allocate */
+        if (inode.indirect == BLOCK_NULL) return BLOCK_NULL;
+        read_block(current_vol, inode.indirect, (unsigned char *) t);
+        /* TODO: do_allocate */
+        return t[fbloc];
+    }
 
-  if (!inode.indirect2) {
-    return BLOCK_NULL;
-  }
+    fbloc -= NB_INDIRECT;
 
-  index2 = fblock / NB_INDIRECT;
-  index1 = fblock % NB_INDIRECT;
-  read_block(current_vol, inode.indirect2, (unsigned char *) t);
+    /* TODO: do_allocate in indirect2 */
 
-  if (!t[index2]) {
-    return BLOCK_NULL;
-  }
+    if (!inode.indirect2) return BLOCK_NULL;
 
-  read_block(current_vol, t[index2], (unsigned char *) t);
-
-  if (!t[index1]) {
-    return BLOCK_NULL;
-  }
-
-  return t[index1];
+    index2 = fbloc / NB_INDIRECT;
+    index1 = fbloc % NB_INDIRECT;
+    read_block(current_vol, inode.indirect2, (unsigned char *) t);
+    if (!t[index2]) return BLOCK_NULL;
+    read_block(current_vol, t[index2], (unsigned char *) t);
+    if (!t[index1]) return BLOCK_NULL;
+    return t[index1];
 }

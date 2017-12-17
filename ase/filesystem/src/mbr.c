@@ -9,11 +9,11 @@
 #include "drive.h"
 
 void save_mbr() {
-  write_sector_n(0, 0, sizeof(mbr), (unsigned char *) &mbr);
+  write_sector_n(0, 0, (unsigned char *) &mbr, sizeof(mbr));
 }
 
 void load_mbr() {
-  read_sector_n(0, 0, sizeof(mbr), (unsigned char *) &mbr);
+  read_sector_n(0, 0, (unsigned char *) &mbr, sizeof(mbr));
   if(mbr.magic != MAGIC_MBR) {
     mbr.magic = MAGIC_MBR;
     mbr.nvol = 0;
@@ -37,9 +37,9 @@ void write_block(unsigned int vol, unsigned int block, unsigned char * buf) {
 }
 
 void read_block_n(int vol, int block, unsigned char * buf, int size) {
-  read_sector_n(cyl_of_block(vol, block), sec_of_block(vol, block), size, buf);
+  read_sector_n(cyl_of_block(vol, block), sec_of_block(vol, block), buf, size);
 }
 
 void write_block_n(int vol, int block, unsigned char * buf, int size) {
-  write_sector_n(cyl_of_block(vol, block), sec_of_block(vol, block), size, buf);
+  write_sector_n(cyl_of_block(vol, block), sec_of_block(vol, block), buf, size);
 }

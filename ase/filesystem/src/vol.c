@@ -38,6 +38,17 @@ int load_super(int vol) {
   return 1;
 }
 
+void format_block(unsigned int vol, unsigned int nblock) {
+    unsigned char buffer[SECTOR_SIZE];
+    unsigned int i;
+
+    for (i = 0; i < SECTOR_SIZE; i++)
+        buffer[i] = 0;
+
+    write_block(vol, nblock, buffer);
+}
+
+
 void save_super() {
   write_block_n(current_vol, 0, (unsigned char *) &superblock, sizeof(superblock));
 }
@@ -59,14 +70,13 @@ int new_block() {
 }
 
 void free_block(unsigned int block) {
-  assert(current_vol >= 0 && current_vol <= mbr.nvol);
-  /*assert(block >= 0 && block < superblock.nfreeblocks);*/
+  struct freeblock_s fb;
+  assert(superblock.magic == MAGIC_SB);
 
   if (block == BLOCK_NULL){
     return;
   }
 
-  struct freeblock_s fb;
   fb.next = superblock.fst_freeblock;
   write_block_n(current_vol, block, (unsigned char *) &fb, sizeof(struct freeblock_s));
   superblock.nfreeblocks++;
