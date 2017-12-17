@@ -16,7 +16,8 @@ void write_inode(unsigned int inumber, struct inode_s * inode) {
 }
 
 unsigned int create_inode(enum file_type_e type) {
-  int i, inumber;
+  int i;
+  unsigned int inumber;
   struct inode_s inode;
 
   inode.magic = MAGIC_INODE;
@@ -24,16 +25,14 @@ unsigned int create_inode(enum file_type_e type) {
   inode.size = 0;
   inode.indirect = BLOCK_NULL;
   inode.indirect2 = BLOCK_NULL;
-
-  for(i = 0; i < NB_INDIRECT; i++) {
+  for (i = 0; i < NB_DIRECT; i++) {
     inode.direct[i] = BLOCK_NULL;
   }
 
   inumber = new_block();
-  if(!inumber) {
+  if (!inumber) {
     return BLOCK_NULL;
   }
-
   write_inode(inumber, &inode);
   return inumber;
 }
@@ -73,7 +72,7 @@ void free_indirect(unsigned int indirect) {
   free_block(indirect);
 }
 
-unsigned int vlobck_of_fblock(unsigned int inumber, unsigned int fblock) {
+unsigned int vblock_of_fblock(unsigned int inumber, unsigned int fblock, int do_allocate) {
   struct inode_s inode;
   unsigned int t[NB_INDIRECT];
   int index1, index2;

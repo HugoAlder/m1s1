@@ -4,7 +4,7 @@
 #define NB_INDIRECT (SECTOR_SIZE / sizeof(int))
 #define MAGIC_INODE 0x12345678
 
-enum file_type_e { FILE, DIRECTORY };
+enum file_type_e { FILE_FILE, FILE_DIRECTORY };
 
 struct inode_s {
   int size, magic;
@@ -18,4 +18,4 @@ void write_inode(unsigned int inumber, struct inode_s * inode);
 unsigned int create_inode(enum file_type_e type);
 int delete_inode(unsigned int inumber);
 void free_indirect(unsigned int indirect);
-unsigned int vlobck_of_fblock(unsigned int inumber, unsigned int fblock);
+unsigned int vblock_of_fblock(unsigned int inumber, unsigned int fblock, int do_allocate);

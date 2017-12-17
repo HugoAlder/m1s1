@@ -53,10 +53,23 @@ int new_block() {
   }
   read_block_n(current_vol, res, (unsigned char *) &freelist, sizeof(freelist));
   superblock.fst_freeblock = freelist.next;
+  superblock.nfreeblocks--;
   save_super();
   return res;
 }
 
 void free_block(unsigned int block) {
-  return;
+  assert(current_vol >= 0 && current_vol <= mbr.nvol);
+  /*assert(block >= 0 && block < superblock.nfreeblocks);*/
+
+  if (block == BLOCK_NULL){
+    return;
+  }
+
+  struct freeblock_s fb;
+  fb.next = superblock.fst_freeblock;
+  write_block_n(current_vol, block, (unsigned char *) &fb, sizeof(struct freeblock_s));
+  superblock.nfreeblocks++;
+  superblock.fst_freeblock = block;
+  save_super();
 }
