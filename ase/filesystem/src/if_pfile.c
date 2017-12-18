@@ -20,7 +20,7 @@ void pfile(unsigned int inumber) {
   status = open_ifile(&fd, inumber);
   if (status) {
     fprintf(stderr, "Unable to open file %d\n", inumber);
-    exit(EXIT_FAILURE);
+    exit(1);
   }
 
   while((c = readc_ifile(&fd)) != -1) {
@@ -33,7 +33,7 @@ void pfile(unsigned int inumber) {
 void usage(const char *prgm) {
   fprintf(stderr, "[%s] usage:\n\t"
           "%s [vol] inumber\n", prgm, prgm);
-  exit(EXIT_FAILURE);
+  exit(1);
 }
 
 int main(int argc, char **argv) {
@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
 
   if (init_hardware(HARDWARE_INI) == 0) {
       fprintf(stderr, "Error in hardware initialization\n");
-      exit(EXIT_FAILURE);
+      exit(1);
   }
 
   for (i = 0; i < 16; i++) {
@@ -64,5 +64,5 @@ int main(int argc, char **argv) {
   pfile(inumber);
   save_mbr();
 
-  exit(EXIT_SUCCESS);
+  exit(0);
 }

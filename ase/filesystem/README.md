@@ -1,19 +1,36 @@
-TODO inodes
+# Système de fichiers
 
-inode.c/inode.h => inode.o
+* Auteur : Hugo Alder
 
--> create_inode.c => &create_inode
+* Description : réalisation d'un système de fichiers au dessus d'un disque magnétique organisé en pistes et secteurs. Il est composé de différentes couches successives.
 
--> rm_inode.c => &rm_inode 17
+* Utilisation : se positionner à la racine du projet et lancer la commande `make`. Pour remettre le disque à zéro, lancer la commande `make realclean`.
 
--> vbloc_of_fbloc vol inumber pos [doalloc]
+* Tous les exécutables produits se trouvent dans le dossier ./bin.
 
-+ modif de frmt_vol <vol>
+## Couche 1 : accès au matériel
+* `./bin/dmps <vol> <cyl>` : afficher le contenu d'un secteur octet par octet sous forme hexadécimale.
 
-Création du répertoire racine (create inode) pour le volume
+* `./bin/frmt (-r)` : formater la totalité du disque. L'option -r permet de réaliser la même opération en commençant le formatage du disque dans le sens inverse (en parcourant le disque en partant de la fin).
 
-TODO ifile
+## Couche 2 : gestion de volumes
 
-Voir encart p10.
+* `/bin/mkvol <cyl> <sec> <size> <type> <name>` : créer un volume à partir du cylindre `<cyl>` et du secteur `<sec>`, de taille `<size>`, de type type et de nom `<name>`.
 
-Mettre les commandes à executer dans le README pour qu'on puisse juste les copier/coller et les executer sur un disque vierge.
+* `/bin/dvol` : afficher les informations relatives aux volumes présents sur le disque.
+
+* `/bin/rmvol <vol>` : supprimer un volume.
+
+## Couche 3 : structure d'un volume et d'un fichier
+
+* `/bin/test_vol` : manipulations simples de blocks grâce aux fonctions new_block() et free_block(). Nécessite la création d'un volume au préalable.
+
+## Couche 4 : manipulations de fichiers
+
+* `/bin/if_nfile` : créer un fichier. Le contenu du fichier est lu sur l'entrée standard. Le inombre du fichier est retourné sur la sortie standard.
+
+* `/bin/if_pfile <inumber>` : afficher le contenu d'un fichier dont le inombre est passé en paramètre sur la sortie standard.
+
+* `/bin/if_dfile <inumber>` : supprimer le fichier dont le inombre est passé en paramètre.
+
+* `/bin/if_cfile <inumber>` : copier le contenu du fichier dont le inombre est passé en paramètre dans un second fichier. Ce second fichier est donc créé; son inombre est affiché sur la sortie standard.

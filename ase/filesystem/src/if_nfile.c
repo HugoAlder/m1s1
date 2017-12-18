@@ -20,7 +20,7 @@ static void nfile() {
   inumber = create_ifile(FILE_FILE);
   if (!inumber) {
     fprintf(stderr, "Unable to create file\n");
-    exit(EXIT_FAILURE);
+    exit(1);
   }
 
   printf("Creating file : %u\n", inumber);
@@ -28,7 +28,7 @@ static void nfile() {
   status = open_ifile(&fd, inumber);
   if (status) {
     fprintf(stderr, "Unable to open file %d\n", inumber);
-    exit(EXIT_FAILURE);
+    exit(1);
   }
 
   while((c = getchar()) != FILE_EOF) {
@@ -41,7 +41,7 @@ static void nfile() {
 static void usage(const char *prgm) {
   fprintf(stderr, "[%s] usage:\n\t"
           "%s [volume]\n", prgm, prgm);
-  exit(EXIT_FAILURE);
+  exit(1);
 }
 
 int main(int argc, char **argv) {
@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 
   if (init_hardware(HARDWARE_INI) == 0) {
     fprintf(stderr, "Error in hardware initialization\n");
-    exit(EXIT_FAILURE);
+    exit(1);
   }
 
   for (i = 0; i < 16; i++) {
@@ -71,5 +71,5 @@ int main(int argc, char **argv) {
   nfile();
   save_super();
 
-  exit(EXIT_SUCCESS);
+  exit(0);
 }

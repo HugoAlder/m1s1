@@ -11,7 +11,6 @@ struct file_desc_s {
   unsigned int size;
 };
 
-/* Utiliser typedef quand il n'y a pas de raisons de modifier les champs de la structure */
 typedef struct file_desc_s file_desc_t;
 
 unsigned int create_ifile(enum file_type_e type);

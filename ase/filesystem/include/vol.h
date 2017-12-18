@@ -1,8 +1,8 @@
 #ifndef VOL_H
 #define VOL_H
 
-#define MAGIC_SB   0x445566
 #define BLOCK_NULL 0
+#define MAGIC_SB   0x445566
 
 enum vol_type { BASE, ANNEXE, OTHER };
 

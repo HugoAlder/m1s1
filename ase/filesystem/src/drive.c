@@ -103,7 +103,6 @@ void format_sector(unsigned int cyl, unsigned int sec, unsigned int nsec, int va
   assert(cyl <= NB_CYL);
   assert(sec <= NB_SEC);
   assert(nsec <= SECTOR_SIZE);
-  assert(value <= 15);
 
   for(; sec < nsec; sec++) {
     _out(0x110, (cyl >> 8) & 0xFF);

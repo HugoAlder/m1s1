@@ -13,7 +13,6 @@ void empty_it() {
 
 int main(int argc, char **argv) {
 
-  struct volume_s cv = mbr.vol[current_vol];
   int i, max, res;
 
   /* Init hardware */
@@ -29,9 +28,9 @@ int main(int argc, char **argv) {
 
   load_mbr();
 
-  printf("Volume : %d\nCylinder : %d\nBlock : %d\nSize : %d\n\n", current_vol, cv.fst_cyl, cv.fst_sec, cv.nblock);
-
   init_super(0, 9999, "Test_vol");
+
+  printf("Testing on volume : %d\n\n", current_vol);
 
   max = superblock.nfreeblocks;
   for(i = 0; i < max + 1; i++){

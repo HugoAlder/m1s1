@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "dmps.h"
+
 #include "hconf.h"
 #include "hardware.h"
 #include "drive.h"
@@ -22,7 +22,7 @@ void reverse_frmt() {
   int sec = NB_SEC - 1;
   for(; cyl >= 0; cyl--) {
     for(; sec >= 0; sec--) {
-    	format_sector(cyl, sec, 1, 0);
+    	format_sector(cyl, sec, 1, 0xAFAFAFAF);
     }
   }
 }

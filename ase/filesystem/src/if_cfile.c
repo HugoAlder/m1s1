@@ -13,29 +13,29 @@ void empty_it(void){
 }
 
 static void cfile(unsigned int sinumber) {
+  unsigned int inumber;
   file_desc_t sfd, dfd;
-  unsigned int dinumber;
   int status;
   int c;
 
-  dinumber = create_ifile(FILE_FILE);
-  if(!dinumber) {
-    fprintf(stderr, "Error while creating file\n");
-    exit(EXIT_FAILURE);
+  inumber = create_ifile(FILE_FILE);
+  if(!inumber) {
+    fprintf(stderr, "Unable to create file\n");
+    exit(0);
   }
 
-  printf("Copy from %d to %d\n", sinumber, dinumber);
+  printf("Copy file %d into file %d\n", sinumber, inumber);
 
-  status = open_ifile(&dfd, dinumber);
+  status = open_ifile(&dfd, inumber);
   if(status) {
-    fprintf(stderr, "Unable to open file %d\n", dinumber);
+    fprintf(stderr, "Unable to open file %d\n", inumber);
     exit(EXIT_FAILURE);
   }
 
   status = open_ifile(&sfd, sinumber);
   if(status) {
-    fprintf(stderr, "Unable to open file %d\n", sinumber);
-    exit(EXIT_FAILURE);
+    fprintf(stderr, "Unable to open source file %d\n", sinumber);
+    exit(0);
   }
 
   while ((c = readc_ifile(&sfd)) != -1) {
@@ -49,7 +49,7 @@ static void cfile(unsigned int sinumber) {
 static void usage(const char *prgm) {
     fprintf(stderr, "[%s] usage:\n\t"
             "%s inumber\n", prgm, prgm);
-    exit(EXIT_FAILURE);
+    exit(0);
 }
 
 int main (int argc, char *argv[]) {
@@ -67,7 +67,7 @@ int main (int argc, char *argv[]) {
 
   if (init_hardware(HARDWARE_INI) == 0) {
     fprintf(stderr, "Error in hardware initialization\n");
-    exit(EXIT_FAILURE);
+    exit(0);
   }
 
   for(i = 0; i < 16; i++) {
@@ -76,9 +76,8 @@ int main (int argc, char *argv[]) {
 
   load_mbr();
   load_super(vol);
-
   cfile(inumber);
   save_super();
 
-  exit(EXIT_SUCCESS);
+  exit(1);
 }

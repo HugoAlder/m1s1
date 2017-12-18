@@ -56,7 +56,7 @@ int main (int argc, char ** argv) {
   printf("Saving MBR\n");
 
   printf("Initializating superblock\n");
-  init_super(mbr.nvol, 0x6969, argv[5]);
+  init_super(mbr.nvol, 0x1234, argv[5]);
 
   mbr.nvol++;
   save_mbr();
