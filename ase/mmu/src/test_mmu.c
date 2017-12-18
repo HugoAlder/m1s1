@@ -24,8 +24,9 @@ int init() {
   }
 
   /* Interrupt handlers */
-  for(i = 0; i < 16; i++)
+  for(i = 0; i < 16; i++) {
       IRQVECTOR[i] = empty_it;
+  }
 
   /* Add mmu handler */
   IRQVECTOR[MMU_IRQ] = mmuhandler;
@@ -38,8 +39,8 @@ int init() {
 
 /* Doit renvoyer une tentative d'accés illégal */
 int main() {
-  int * adr = 0;
+  char * ptr = (char *) 0;
   init();
-  *adr = 1;
+  *ptr = 'c';
   return 0;
 }
