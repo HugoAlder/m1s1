@@ -4,44 +4,36 @@
 #include "sem.h"
 
 static int obj;
-struct sem_s mutex, empty, full;
+struct sem_s mutex;
 
-void rmv_obj(void) {
-  printf("Removing object\n");
-  obj--;
+void test1(void) {
+    printf("This is test1\n");
 }
 
-void put_obj(void) {
-  printf("Putting object\n");
-  obj++;
+void test2(void) {
+    printf("This is test2\n");
 }
 
-void prod(void * args) {
-  while (1) {
-    sem_down(&empty);
+void cons1(void * args) {
+    test1();
     sem_down(&mutex);
-    put_obj();
+    printf(">> cpt1.1 %d\n", mutex.cpt);
     sem_up(&mutex);
-    sem_up(&full);
-  }
+    printf(">> cpt1.2 %d\n", mutex.cpt);
 }
 
-void cons(void * args) {
-  while (1) {
-    sem_down(&full);
+void cons2(void * args) {
+    test2();
     sem_down(&mutex);
-    rmv_obj();
+    printf(">> cpt2.1 %d\n", mutex.cpt);
     sem_up(&mutex);
-    sem_up(&empty);
-  }
+    printf(">> cpt2.2 %d\n", mutex.cpt);
 }
 
 int main(int argc, char *argv[]) {
-  sem_init(&mutex, 1);
-  sem_init(&empty, 10);
-  sem_init(&full, 0);
-  create_ctx(16384, prod, NULL);
-  create_ctx(16384, cons, NULL);
-  start_scheduler();
-  return 0;
+    sem_init(&mutex, 0);
+    create_ctx(16384, cons1, NULL);
+    create_ctx(16384, cons2, NULL);
+    start_scheduler();
+    return 0;
 }

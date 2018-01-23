@@ -2,7 +2,8 @@
 
 struct sem_s {
   unsigned int cpt;
-  struct ctx_s * wctx;
+  struct ctx_s * head_ctx;
+  struct ctx_s * tail_ctx;
 };
 
 void sem_init(struct sem_s * sem, unsigned int val);
